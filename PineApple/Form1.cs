@@ -421,29 +421,33 @@ namespace PineApple
         private void SaveActivityButton_Click(object sender, EventArgs e)
         {
             groupBox1.Text = "Activity";
-            //On crée la liste des astronautes sélectionnés
-            List<int> lastro = new List<int>();
-            for (int i = 0; i < checkedListBox1.Items.Count; i++)
-            {
-                if (checkedListBox1.GetItemChecked(i))
-                    lastro.Add(i);
-            }
+
             //On crée les dates de début et de fin à partir des combo boxes
-            MDate dateDeb = new MDate((int)numericUpDown1.Value,comboBoxStartHour.SelectedIndex,comboBoxStartMinutes.SelectedIndex*10);
-            MDate dateFin = new MDate((int)numericUpDown1.Value,comboBoxEndHour.SelectedIndex,comboBoxEndMinutes.SelectedIndex*10);
-            //Puis on crée l'activité pour l'ajouter à la mission
-            mission.newActivity(richTextBox1.Text,
-                                      comboBoxGenericType.SelectedIndex,
-                                      comboBoxType.SelectedIndex,
-                                      0, // A changer !! Il faut le numéro de la location choisie
-                                      lastro,
-                                      false, // extern mission ?
-                                      false, //spaceVehicle ?
-                                      dateDeb,
-                                      dateFin);
-            mission.WriteActivityXML();
-            showDay(dateDeb.getDay());
-            label32.Text = dateDeb.getDay().ToString();
+            MDate dateDeb = new MDate((int)numericUpDown1.Value, comboBoxStartHour.SelectedIndex, comboBoxStartMinutes.SelectedIndex * 10);
+            MDate dateFin = new MDate((int)numericUpDown1.Value, comboBoxEndHour.SelectedIndex, comboBoxEndMinutes.SelectedIndex * 10);
+            if (mission.checkAvailability(dateDeb, dateFin))
+            {
+                //On crée la liste des astronautes sélectionnés
+                List<int> lastro = new List<int>();
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    if (checkedListBox1.GetItemChecked(i))
+                        lastro.Add(i);
+                }
+                //Puis on crée l'activité pour l'ajouter à la mission
+                mission.newActivity(richTextBox1.Text,
+                                    comboBoxGenericType.SelectedIndex,
+                                    comboBoxType.SelectedIndex,
+                                    0, // A changer !! Il faut le numéro de la location choisie
+                                    lastro,
+                                    false, // extern mission ?
+                                    false, //spaceVehicle ?
+                                    dateDeb,
+                                    dateFin);
+                mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                showDay(dateDeb.getDay());//On rafraichit le tableau journalier
+                label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+            }
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)
         {

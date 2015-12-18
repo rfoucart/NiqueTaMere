@@ -52,8 +52,7 @@ namespace PineApple
         }
         public static bool operator <(MDate test, MDate liste)
         {
-
-                return test.getDay() < liste.getDay() ?true:false;
+            return test.getDay() < liste.getDay() ?true:false;
         }
         public static bool operator >(MDate test, MDate liste)
         {
@@ -67,9 +66,7 @@ namespace PineApple
         }
         public static bool operator >=(MDate test, MDate liste)
         {
-
             return test.getDay() >= liste.getDay() ? true : false;
         }
-
     }
 }

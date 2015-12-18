@@ -305,7 +305,7 @@ namespace PineApple
         public bool checkAvailability(MDate start, MDate end)
         {
             List<Activity> liste = new List<Activity>(0);
-            liste=_activities.Where(x=>(x.getEndDate()>=start&&x.getEndDate()<=end)||x.getStartDate()<=end&&x.getStartDate()>=start).ToList();
+            liste=_activities.Where(x=>(x.getEndDate()>start&&x.getEndDate()<=end)||x.getStartDate()<end&&x.getStartDate()>=start).ToList();
             if (liste.Count == 0)
             {
                 return true;
