@@ -443,7 +443,8 @@ namespace PineApple
                                       dateDeb,
                                       dateFin);
             mission.WriteActivityXML();
-            
+            showDay(dateDeb.getDay());
+            label32.Text = dateDeb.getDay().ToString();
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)
         {
