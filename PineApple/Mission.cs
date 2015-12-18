@@ -83,22 +83,22 @@ namespace PineApple
         /// <param name="astronautes"></param>
         /// <param name="externMission"></param>
         /// <param name="spaceVehicle"></param>
-        public void newActivity(string description,int genericType, int type, int location, List<int> astronautes, bool externMission, bool spaceVehicle, MDate startDate, MDate endDate)
+        public void newActivity(string description,int genericType, int type, int location, List<int> astronautes, bool externMission, bool spaceVehicle, bool scaph, MDate startDate, MDate endDate)
         {
-            _activities.Add(new Activity(description, genericType, type, location, astronautes, externMission, spaceVehicle, startDate, endDate));
+            _activities.Add(new Activity(description, genericType, type, location, astronautes, externMission, spaceVehicle, scaph, startDate, endDate));
         }
         public void defaultDay(int jour)
         {
             List<int> astro=_astronautes.Select(a=>a.getNumber()).ToList();
 
-            _activities.Add(new Activity(string.Empty, 0, 1, 1, astro, false, false, new MDate(jour, 0, 0), new MDate(jour, 7, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false, new MDate(jour, 7, 0), new MDate(jour, 8, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, new MDate(jour, 8, 0), new MDate(jour, 12, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false, new MDate(jour, 12, 0), new MDate(jour, 14, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, new MDate(jour, 14, 0), new MDate(jour, 19, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false, new MDate(jour, 19, 0), new MDate(jour, 21, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, new MDate(jour, 21, 0), new MDate(jour, 23, 0)));
-            _activities.Add(new Activity(string.Empty, 0, 1, 1, astro, false, false, new MDate(jour, 23, 0), new MDate(jour, 24, 40)));
+            _activities.Add(new Activity(string.Empty, 0, 1, 1, astro, false, false,false, new MDate(jour, 0, 0), new MDate(jour, 7, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false,false, new MDate(jour, 7, 0), new MDate(jour, 8, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, false, new MDate(jour, 8, 0), new MDate(jour, 12, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false, false, new MDate(jour, 12, 0), new MDate(jour, 14, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, false, new MDate(jour, 14, 0), new MDate(jour, 19, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 0, 1, astro, false, false, false, new MDate(jour, 19, 0), new MDate(jour, 21, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 3, 1, astro, false, false, false, new MDate(jour, 21, 0), new MDate(jour, 23, 0)));
+            _activities.Add(new Activity(string.Empty, 0, 1, 1, astro, false, false, false, new MDate(jour, 23, 0), new MDate(jour, 24, 40)));
 
         }
         /// <summary>
@@ -267,7 +267,7 @@ namespace PineApple
                 {
                     _astro.Add(int.Parse(a));
                 }
-                newActivity(activity["Description"].InnerText, int.Parse(activity["GenerycType"].InnerText), int.Parse(activity["Type"].InnerText), int.Parse(activity["Location"].InnerText), _astro, bool.Parse(activity["ExternMission"].InnerText), bool.Parse(activity["SpaceVehicle"].InnerText), startDate, endDate);
+                newActivity(activity["Description"].InnerText, int.Parse(activity["GenerycType"].InnerText), int.Parse(activity["Type"].InnerText), int.Parse(activity["Location"].InnerText), _astro, bool.Parse(activity["ExternMission"].InnerText), bool.Parse(activity["SpaceVehicle"].InnerText),bool.Parse(activity["Scaph"].InnerText) startDate, endDate);
             }
 
             //Add the ref number to the class
@@ -355,6 +355,40 @@ namespace PineApple
         {
             int ind = _activities.FindIndex(x => x.getNumber() == num);
             _activities[ind].updateActivity(a);
+        }
+
+        public List<Location> getVehiculeLocations(int periodStart, int periodEnd)
+        {
+            List<Location> l = new List<Location>(0);
+            List<Activity> a = new List<Activity>(0);
+            a = _activities.Where(x=> x.getSpaceVehicule()==true).ToList();
+            foreach(Activity activity in a)
+            {
+                l.Add(_locations.Find(x=>x.getNumber()==activity.getLocation()));
+            }
+            return l;
+        }
+        public List<Location> getScaphLocations(int periodStart, int periodEnd)
+        {
+            List<Location> l = new List<Location>(0);
+            List<Activity> a = new List<Activity>(0);
+            a = _activities.Where(x =>   x.getScaph() == true).ToList();
+            foreach (Activity activity in a)
+            {
+                l.Add(_locations.Find(x => x.getNumber() == activity.getLocation() ));
+            }
+            return l;
+        }
+        public List<Location> getExternExpLocations(int periodStart, int periodEnd)
+        {
+            List<Location> l = new List<Location>(0);
+            List<Activity> a = new List<Activity>(0);
+            a = _activities.Where(x => x.getExternBool() == true).ToList();
+            foreach (Activity activity in a)
+            {
+                l.Add(_locations.Find(x => x.getNumber() == activity.getLocation()));
+            }
+            return l;
         }
     }
 }

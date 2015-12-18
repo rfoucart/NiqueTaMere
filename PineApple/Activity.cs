@@ -16,7 +16,8 @@ namespace PineApple
         private int _indexOfType;
         private List<int> _astronautes;
         private int _location;
-        private bool _externMission;
+        private bool _externExperiment;
+        private bool _scaph;
         private bool _spaceVehicle;
         private MDate _startDate;
         private MDate _endDate;
@@ -33,14 +34,15 @@ namespace PineApple
             _indexOfGenericType = 0;
             _indexOfType = 0;
             _location = 0;
-            _externMission = false;
+            _externExperiment = false;
             _spaceVehicle = false;
+            _scaph = false;
             _astronautes = new List<int>(0);
             MDate d = new MDate(1, 0, 0);
             _startDate = d;
             _endDate = d;
         }
-        public Activity(string description, int genericType ,int type, int location, List<int> astronautes, bool externMission, bool spaceVehicle, MDate startDate, MDate endDate)
+        public Activity(string description, int genericType ,int type, int location, List<int> astronautes, bool externMission, bool spaceVehicle, bool scaph, MDate startDate, MDate endDate)
         {
             _number = _referenceNumber;
             _referenceNumber++;
@@ -48,8 +50,9 @@ namespace PineApple
             _indexOfGenericType = genericType;
             _indexOfType = type;
             _location = location;
-            _externMission = externMission;
+            _externExperiment = externMission;
             _spaceVehicle = spaceVehicle;
+            _scaph = scaph;
             _astronautes = astronautes;
             _startDate = startDate;
             _endDate = endDate;
@@ -58,10 +61,15 @@ namespace PineApple
         {
             return _number;
         }
+        public bool getSpaceVehicule()
+        {
+            return _spaceVehicle;
+        }
         public bool getExternBool()
         {
-            return _externMission;
+            return _externExperiment;
         }
+
         public string getDescription()
         {
             return _description;
@@ -89,6 +97,10 @@ namespace PineApple
         public int getIndexOfGenericType()
         {
             return _indexOfGenericType;
+        }
+        public bool getScaph()
+        {
+            return _scaph;
         }
         public int getIndexOfType()
         {
@@ -149,12 +161,17 @@ namespace PineApple
             activity.AppendChild(Location);
 
             XmlNode ExternMission = xmlDoc.CreateElement("ExternMission");
-            ExternMission.InnerText = this._externMission.ToString();
+            ExternMission.InnerText = this._externExperiment.ToString();
             activity.AppendChild(ExternMission);
 
             XmlNode SpaceVehicle = xmlDoc.CreateElement("SpaceVehicle");
             SpaceVehicle.InnerText = this._spaceVehicle.ToString();
             activity.AppendChild(SpaceVehicle);
+
+            XmlNode Scaph = xmlDoc.CreateElement("Scaph");
+            Scaph.InnerText = this._scaph.ToString();
+            activity.AppendChild(Scaph);
+
 
             XmlNode StartDate = xmlDoc.CreateElement("StartDate");
             StartDate.InnerText = this._startDate.ToString();
@@ -172,8 +189,9 @@ namespace PineApple
             _indexOfGenericType = a._indexOfGenericType;
             _indexOfType = a._indexOfType;
             _location = a._location;
-            _externMission = a._externMission;
+            _externExperiment = a._externExperiment;
             _spaceVehicle = a._spaceVehicle;
+            _scaph = a._scaph;
             _astronautes = a._astronautes;
             _startDate = a._startDate;
             _endDate = a._endDate;

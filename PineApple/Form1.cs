@@ -32,7 +32,7 @@ namespace PineApple
             daySheet = 4;//getDaySheetNumberFromDay(mission.getCurrentDay().getDay());
             globalPanelInit();
             panelActu(daySheet);
-            
+
             //mission.newAstronaute("jean-pierre");
             //mission.newAstronaute("jean-guy");
             //mission.newAstronaute("pierre-jean");
@@ -40,9 +40,9 @@ namespace PineApple
             //mission.newLocation("petaouchnok",150,200);
             //mission.newLocation("Base", 700, 1000);
             //this.WriteMissionXML();
-            
-           
-            
+
+
+
             //mission.defaultDay(1);
             //mission.WriteActivityXML();
             showDay(mission.getCurrentDay().getDay());
@@ -56,12 +56,12 @@ namespace PineApple
         private void searchInit()
         {
             List<Type> listeGenericType = mission.getActivityTypes();
-            
+
             int i = 0;
             Dictionary<string, string> GT = new Dictionary<string, string>();
             Dictionary<string, string> T = new Dictionary<string, string>();
             foreach (Type t in listeGenericType)
-            {   
+            {
                 GT.Add(i.ToString(), t.getGenericType());
                 i++;
             }
@@ -73,9 +73,9 @@ namespace PineApple
             comboBoxGenericType.DisplayMember = "Value";
             comboBoxGenericType.ValueMember = "Key";
             //string value = ((KeyValuePair<string, string>)searchGTypeCombo.SelectedItem).Value;
-         
+
         }
- 
+
         private void globalPanelInit()
         {
             // Création du paneau de boutons
@@ -101,7 +101,7 @@ namespace PineApple
         //Affichage de la Bande des heures dans la partie jour
         private void dayHeaderInit()
         {
-            
+
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnCount = 150; // <<<-------
@@ -112,29 +112,29 @@ namespace PineApple
             tableLayoutPanel1.RowStyles.Clear();
             for (int i = 0; i < tableLayoutPanel1.ColumnCount; i++)
             {
-                ColumnStyle cs = new ColumnStyle(SizeType.Percent,100f/tableLayoutPanel1.ColumnCount );
+                ColumnStyle cs = new ColumnStyle(SizeType.Percent, 100f / tableLayoutPanel1.ColumnCount);
                 tableLayoutPanel1.ColumnStyles.Add(cs);
             }
             tableLayoutPanel1.RowStyles.Clear();
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute,31));
-            for( int x=0; x<25; x++)
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31));
+            for (int x = 0; x < 25; x++)
             {
-                        Label Text2 = new Label();
-                        
-                        Text2.Text = x+"H";
-                        Text2.Font = new Font("Helvetica", 7);
-                        Text2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                        Text2.BackColor = Color.LightCyan;
-                        Text2.Margin = new Padding(0, 0, 0, 0);
-                        Text2.Height = 30;
-                        Text2.AutoSize = false;
-                        tableLayoutPanel1.Controls.Add(Text2, x*6, 0);
-                        tableLayoutPanel1.SetColumnSpan(Text2, 6);
-                        if(x==24)
-                        {
-                            tableLayoutPanel1.SetColumnSpan(Text2, 4);   
-                        }
-                       
+                Label Text2 = new Label();
+
+                Text2.Text = x + "H";
+                Text2.Font = new Font("Helvetica", 7);
+                Text2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                Text2.BackColor = Color.LightCyan;
+                Text2.Margin = new Padding(0, 0, 0, 0);
+                Text2.Height = 30;
+                Text2.AutoSize = false;
+                tableLayoutPanel1.Controls.Add(Text2, x * 6, 0);
+                tableLayoutPanel1.SetColumnSpan(Text2, 6);
+                if (x == 24)
+                {
+                    tableLayoutPanel1.SetColumnSpan(Text2, 4);
+                }
+
             }
             tableLayoutPanel1.ResumeLayout();
 
@@ -147,8 +147,8 @@ namespace PineApple
             astroNames.RowStyles.Clear();
             for (int i = 0; i < astroNames.RowCount; i++)
             {
-                astroNames.RowStyles.Add(new RowStyle(SizeType.Percent, 100f/astroNames.RowCount));
-               
+                astroNames.RowStyles.Add(new RowStyle(SizeType.Percent, 100f / astroNames.RowCount));
+
             }
             for (int i = 0; i < astroNames.RowCount; i++)
             {
@@ -169,36 +169,36 @@ namespace PineApple
         //probléme de vitesse pour l'instant
         public void panelActu(int i)
         {
-            
-            if(i>=1 && i<=10)
-            {
-               for(int j=0 ; j<50 ; j++)
-               {
-                   int jour = (i - 1) * 50 + (j + 1);
-                   if ( mission.outThisDay(jour)==false)
-                   {
-                       listButtonPanel[j].Image=null;
-                   }
-                   else
-                   {
-                       listButtonPanel[j].Image = new Bitmap(Image.FromFile("mol.png"), new Size(20, 20));
-                   }
-                   
-                   listButtonPanel[j].Text=string.Format("{0}",jour);
-                   if (jour == mission.getCurrentDay().getDay())
-                   {
-                       listButtonPanel[j].BackColor=Color.LightGreen;
-                   }
-                   else if (jour > mission.getCurrentDay().getDay())
-                   {
-                       listButtonPanel[j].BackColor=Color.LightBlue;
-                   }
-                   else if (jour < mission.getCurrentDay().getDay())
-                   {
-                       listButtonPanel[j].BackColor = Color.LightGray;
-                   }
 
-               }
+            if (i >= 1 && i <= 10)
+            {
+                for (int j = 0; j < 50; j++)
+                {
+                    int jour = (i - 1) * 50 + (j + 1);
+                    if (mission.outThisDay(jour) == false)
+                    {
+                        listButtonPanel[j].Image = null;
+                    }
+                    else
+                    {
+                        listButtonPanel[j].Image = new Bitmap(Image.FromFile("mol.png"), new Size(20, 20));
+                    }
+
+                    listButtonPanel[j].Text = string.Format("{0}", jour);
+                    if (jour == mission.getCurrentDay().getDay())
+                    {
+                        listButtonPanel[j].BackColor = Color.LightGreen;
+                    }
+                    else if (jour > mission.getCurrentDay().getDay())
+                    {
+                        listButtonPanel[j].BackColor = Color.LightBlue;
+                    }
+                    else if (jour < mission.getCurrentDay().getDay())
+                    {
+                        listButtonPanel[j].BackColor = Color.LightGray;
+                    }
+
+                }
             }
         }
         //Actualise la partie jour en fonction du jour selectionné sur la partie calendrier. 
@@ -211,15 +211,15 @@ namespace PineApple
             tableLayoutPanel2.GrowStyle = TableLayoutPanelGrowStyle.AddColumns;//.AddColumns;
             tableLayoutPanel2.ColumnStyles.Clear();
             tableLayoutPanel2.RowStyles.Clear();
-            tableLayoutPanel2.AutoScrollMargin = new Size(0,0);
+            tableLayoutPanel2.AutoScrollMargin = new Size(0, 0);
             for (int i = 0; i < tableLayoutPanel2.ColumnCount; i++)
             {
-                ColumnStyle cs = new ColumnStyle(SizeType.Percent, 100f/tableLayoutPanel2.ColumnCount);
+                ColumnStyle cs = new ColumnStyle(SizeType.Percent, 100f / tableLayoutPanel2.ColumnCount);
                 tableLayoutPanel2.ColumnStyles.Add(cs);
             }
             List<Activity> ListOfActivities = mission.selectActivitiesByDay(day);
             tableLayoutPanel2.RowCount = mission.getAstronautes().Count;
-            for (int i = 0; i < tableLayoutPanel2.RowCount;i++ )
+            for (int i = 0; i < tableLayoutPanel2.RowCount; i++)
             {
                 tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100 / tableLayoutPanel2.RowCount));
             }
@@ -258,11 +258,11 @@ namespace PineApple
         }
         private int lengthToColumn(MDate d, MDate f)
         {
-            double D = d.getHours()*60 + d.getMinutes();
-            double F = f.getHours()*60 + f.getMinutes();
+            double D = d.getHours() * 60 + d.getMinutes();
+            double F = f.getHours() * 60 + f.getMinutes();
             double DF = F - D;
-            int df=(int)(DF/10);
-            return  df ;
+            int df = (int)(DF / 10);
+            return df;
         }
         //Ecrit la mission en xml
         private void WriteMissionXML()
@@ -292,7 +292,7 @@ namespace PineApple
             mission = new Mission(name.InnerText, numberOfDays);
 
             //Add the astronautes
-            foreach(XmlNode astronaute in astronautes)
+            foreach (XmlNode astronaute in astronautes)
             {
                 mission.newAstronaute(astronaute["Name"].InnerText, int.Parse(astronaute["Number"].InnerText));
             }
@@ -324,15 +324,15 @@ namespace PineApple
         private void button1_Click(object sender, EventArgs e)
         {
             Button a = sender as Button;
-            if(a.Text=="Previous")
+            if (a.Text == "Previous")
             {
-                if(daySheet>1)
-                {   
+                if (daySheet > 1)
+                {
                     daySheet--;
                     panelActu(daySheet);
                 }
             }
-            else if(a.Text=="Next")
+            else if (a.Text == "Next")
             {
                 if (daySheet < 10)
                 {
@@ -405,7 +405,7 @@ namespace PineApple
             foreach (int numAstro in a.getAstronautes()) //Pour resélectionner les bons
                 checkedListBox1.SetItemChecked(numAstro, true);
         }
-        
+
         private void NewActivityButton_Click(object sender, EventArgs e)
         {
             groupBox1.Text = "New Activity"; // Changement du nom pour montrer qu'on crée une activité
@@ -430,7 +430,7 @@ namespace PineApple
             //On crée les dates de début et de fin à partir des combo boxes
             MDate dateDeb = new MDate((int)numericUpDown1.Value, comboBoxStartHour.SelectedIndex, comboBoxStartMinutes.SelectedIndex * 10);
             MDate dateFin = new MDate((int)numericUpDown1.Value, comboBoxEndHour.SelectedIndex, comboBoxEndMinutes.SelectedIndex * 10);
-            
+
             //On crée la liste des astronautes sélectionnés
             List<int> lastro = new List<int>();
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -441,15 +441,22 @@ namespace PineApple
             if (creating) // Si on est en mode création
             {//Puis on crée l'activité pour l'ajouter à la mission
                 bool b = mission.checkAvailability(dateDeb, dateFin, lastro);
+
+                bool explo = false;
+                if (comboBoxGenericType.SelectedIndex==1 && comboBoxType.SelectedIndex==4)
+                    {
+                        explo = true;
+                    }
                 if (b)
-                {
+                {  
                     mission.newActivity(richTextBox1.Text,
                                         comboBoxGenericType.SelectedIndex,
                                         comboBoxType.SelectedIndex,
                                         0, // A changer !! Il faut le numéro de la location choisie
                                         lastro,
-                                        false, // extern mission ?
-                                        false, //spaceVehicle ?
+                                        explo, // extern mission ?
+                                        checkBox4.Checked, //spaceVehicle ?
+                                        checkBox5.Checked,
                                         dateDeb,
                                         dateFin);
                     mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
@@ -461,6 +468,11 @@ namespace PineApple
             else
             {
                 bool b = mission.checkAvailabilityForUpdate(dateDeb, dateFin, lastro, ((Activity)ResetActivityButton.Tag).getNumber());
+                bool explo = false;
+                if (comboBoxGenericType.SelectedIndex == 1 && comboBoxType.SelectedIndex == 4)
+                {
+                    explo = true;
+                }
                 if (b)
                 {
                     Activity a = new Activity(richTextBox1.Text,
@@ -468,8 +480,9 @@ namespace PineApple
                                               comboBoxType.SelectedIndex,
                                               0, // A changer !! Il faut le numéro de la location choisie
                                               lastro,
-                                              false, // extern mission ?
-                                              false, //spaceVehicle ?
+                                              explo, // extern mission ?
+                                              checkBox4.Checked, //spaceVehicle ?
+                                        checkBox5.Checked,
                                               dateDeb,
                                               dateFin);
                     mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
@@ -491,13 +504,13 @@ namespace PineApple
         {
             searchPanel.SuspendLayout();
             List<Mission.searchResult> results = new List<Mission.searchResult>(0);
-            if(searchGTypeCombo.Enabled==true)
+            if (searchGTypeCombo.Enabled == true)
             {
-                results = mission.searchByType(int.Parse(((KeyValuePair<string, string>)searchGTypeCombo.SelectedItem).Key), int.Parse(((KeyValuePair<string, string>)searchTypeCombo.SelectedItem).Key), Convert.ToInt32(numericUpDown2.Value),  Convert.ToInt32(numericUpDown3.Value));
+                results = mission.searchByType(int.Parse(((KeyValuePair<string, string>)searchGTypeCombo.SelectedItem).Key), int.Parse(((KeyValuePair<string, string>)searchTypeCombo.SelectedItem).Key), Convert.ToInt32(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value));
             }
             else
             {
-                results = mission.searchByKeyword(textBox4.Text, Convert.ToInt32(numericUpDown2.Value),  Convert.ToInt32(numericUpDown3.Value));
+                results = mission.searchByKeyword(textBox4.Text, Convert.ToInt32(numericUpDown2.Value), Convert.ToInt32(numericUpDown3.Value));
             }
             searchPanel.Controls.Clear();
             searchPanel.RowCount = results.Count; // <<<-------
@@ -571,7 +584,7 @@ namespace PineApple
         //Lorsque un keyword est tapé, on bloque les champs type et generic type.
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            TextBox t =sender as TextBox;
+            TextBox t = sender as TextBox;
 
             if (t.Text.Length != 0)
             {
@@ -599,7 +612,7 @@ namespace PineApple
         private void updateSelectedTime(int i)
         {
             mission.updateSelectedDay(i);
-            label31.Text=mission.marsToEarthDate(mission.getSelectedDay());
+            label31.Text = mission.marsToEarthDate(mission.getSelectedDay());
             label32.Text = mission.getSelectedDay().ToString();
         }
         private int getDaySheetNumberFromDay(int i)
@@ -617,7 +630,7 @@ namespace PineApple
             }
             return sheet;
         }
-    
+
 
 
         private void comboBoxGenericType_SelectedIndexChanged(object sender, EventArgs e)
@@ -640,7 +653,6 @@ namespace PineApple
             comboBoxType.ValueMember = "Key";
             //string value = ((KeyValuePair<string, string>)searchGTypeCombo.SelectedItem).Value;
 
-
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -649,5 +661,46 @@ namespace PineApple
             mission.deleteActivity(a.getNumber());
             showDay(a.getDay()); // Rafraichit le panel des activités de la journée
         }
-    }
+        // Add location
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addLocation(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 formMap = new Form2(this);
+            formMap.Show();
+        }
+        public List<Location> getExploLocations(int periodeStart, int periodEnd,bool v,bool s, bool oe )
+        {
+            //manque la gestion de la période 
+            List<Location> l = new List<Location>(0);
+
+            if (v == true)
+            {
+                l=mission.getVehiculeLocations(periodeStart, periodEnd);
+            }
+            if (s == true )
+            {
+                l=mission.getScaphLocations(periodeStart, periodEnd);
+            }
+            if(oe == true)
+            {
+                l=mission.getExternExpLocations(periodeStart, periodEnd);
+            }
+            return l;
+        }
+
+        private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        
+    }   
 }

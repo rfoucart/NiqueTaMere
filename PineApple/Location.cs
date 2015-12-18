@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace PineApple
 {
-    class Location
+    public class Location
     {
         private static int _referenceNumber = 0;
         private int _number;
@@ -59,6 +59,10 @@ namespace PineApple
         {
             _posx = posx;
             _posy = posy;
+        }
+        public int getNumber()
+        {
+            return _number;
         }
         public void WriteXML(XmlDocument xmlDoc, XmlNode rootNode)
         {

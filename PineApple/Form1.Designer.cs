@@ -41,7 +41,6 @@
             this.NewActivityButton = new System.Windows.Forms.Button();
             this.SaveActivityButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.PictNanediVallis = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.searchPanel = new PineApple.DoubleBufferedTableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.searchGTypeCombo = new System.Windows.Forms.ComboBox();
@@ -82,9 +80,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.astroNames = new PineApple.DoubleBufferedTableLayoutPanel();
-            this.tableLayoutPanel2 = new PineApple.DoubleBufferedTableLayoutPanel();
-            this.tableLayoutPanel1 = new PineApple.DoubleBufferedTableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -95,16 +90,29 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.PictNanediVallis = new System.Windows.Forms.PictureBox();
             this.globalPanel = new PineApple.DoubleBufferedTableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
+            this.astroNames = new PineApple.DoubleBufferedTableLayoutPanel();
+            this.tableLayoutPanel2 = new PineApple.DoubleBufferedTableLayoutPanel();
+            this.tableLayoutPanel1 = new PineApple.DoubleBufferedTableLayoutPanel();
+            this.searchPanel = new PineApple.DoubleBufferedTableLayoutPanel();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictNanediVallis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictNanediVallis)).BeginInit();
             this.globalPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +129,7 @@
             // NextButton
             // 
             this.NextButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.NextButton.Location = new System.Drawing.Point(448, 25);
+            this.NextButton.Location = new System.Drawing.Point(473, 25);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(75, 23);
             this.NextButton.TabIndex = 5;
@@ -132,6 +140,8 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.checkBox5);
+            this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.comboBoxGenericType);
             this.groupBox1.Controls.Add(this.ResetActivityButton);
@@ -141,7 +151,6 @@
             this.groupBox1.Controls.Add(this.NewActivityButton);
             this.groupBox1.Controls.Add(this.SaveActivityButton);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.PictNanediVallis);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label13);
@@ -165,9 +174,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(557, 285);
+            this.groupBox1.Location = new System.Drawing.Point(840, 285);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 444);
+            this.groupBox1.Size = new System.Drawing.Size(413, 444);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Activity";
@@ -187,7 +196,7 @@
             this.comboBoxGenericType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxGenericType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxGenericType.FormattingEnabled = true;
-            this.comboBoxGenericType.Location = new System.Drawing.Point(227, 68);
+            this.comboBoxGenericType.Location = new System.Drawing.Point(216, 34);
             this.comboBoxGenericType.Name = "comboBoxGenericType";
             this.comboBoxGenericType.Size = new System.Drawing.Size(137, 21);
             this.comboBoxGenericType.TabIndex = 59;
@@ -208,15 +217,16 @@
             this.comboBoxType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(227, 121);
+            this.comboBoxType.Location = new System.Drawing.Point(216, 87);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(137, 21);
             this.comboBoxType.TabIndex = 56;
+            this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(227, 52);
+            this.label15.Location = new System.Drawing.Point(216, 18);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 13);
             this.label15.TabIndex = 55;
@@ -225,7 +235,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(227, 105);
+            this.label14.Location = new System.Drawing.Point(216, 71);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 13);
             this.label14.TabIndex = 54;
@@ -259,23 +269,7 @@
             this.button4.TabIndex = 51;
             this.button4.Text = "Add Location";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // PictNanediVallis
-            // 
-            this.PictNanediVallis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictNanediVallis.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.PictNanediVallis.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PictNanediVallis.ErrorImage")));
-            this.PictNanediVallis.Image = global::PineApple.Properties.Resources.nanedi_valles;
-            this.PictNanediVallis.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictNanediVallis.InitialImage")));
-            this.PictNanediVallis.Location = new System.Drawing.Point(383, 14);
-            this.PictNanediVallis.Name = "PictNanediVallis";
-            this.PictNanediVallis.Size = new System.Drawing.Size(290, 424);
-            this.PictNanediVallis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictNanediVallis.TabIndex = 50;
-            this.PictNanediVallis.TabStop = false;
-            this.PictNanediVallis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictNanediVallis_MouseClick);
+            this.button4.Click += new System.EventHandler(this.addLocation);
             // 
             // richTextBox1
             // 
@@ -298,7 +292,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(147, 92);
+            this.label13.Location = new System.Drawing.Point(117, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(10, 13);
             this.label13.TabIndex = 47;
@@ -314,7 +308,7 @@
             "30",
             "40",
             "50"});
-            this.comboBoxStartMinutes.Location = new System.Drawing.Point(158, 89);
+            this.comboBoxStartMinutes.Location = new System.Drawing.Point(128, 84);
             this.comboBoxStartMinutes.Name = "comboBoxStartMinutes";
             this.comboBoxStartMinutes.Size = new System.Drawing.Size(41, 21);
             this.comboBoxStartMinutes.TabIndex = 46;
@@ -348,7 +342,7 @@
             "22",
             "23",
             "24"});
-            this.comboBoxStartHour.Location = new System.Drawing.Point(102, 89);
+            this.comboBoxStartHour.Location = new System.Drawing.Point(72, 84);
             this.comboBoxStartHour.Name = "comboBoxStartHour";
             this.comboBoxStartHour.Size = new System.Drawing.Size(44, 21);
             this.comboBoxStartHour.TabIndex = 45;
@@ -356,7 +350,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(147, 137);
+            this.label8.Location = new System.Drawing.Point(117, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 44;
@@ -372,7 +366,7 @@
             "30",
             "40",
             "50"});
-            this.comboBoxEndMinutes.Location = new System.Drawing.Point(158, 134);
+            this.comboBoxEndMinutes.Location = new System.Drawing.Point(128, 129);
             this.comboBoxEndMinutes.Name = "comboBoxEndMinutes";
             this.comboBoxEndMinutes.Size = new System.Drawing.Size(41, 21);
             this.comboBoxEndMinutes.TabIndex = 43;
@@ -406,14 +400,14 @@
             "22",
             "23",
             "24"});
-            this.comboBoxEndHour.Location = new System.Drawing.Point(102, 134);
+            this.comboBoxEndHour.Location = new System.Drawing.Point(72, 129);
             this.comboBoxEndHour.Name = "comboBoxEndHour";
             this.comboBoxEndHour.Size = new System.Drawing.Size(44, 21);
             this.comboBoxEndHour.TabIndex = 42;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(102, 45);
+            this.numericUpDown1.Location = new System.Drawing.Point(72, 40);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             500,
             0,
@@ -519,7 +513,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 137);
+            this.label4.Location = new System.Drawing.Point(12, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 30;
@@ -528,7 +522,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 92);
+            this.label3.Location = new System.Drawing.Point(9, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 29;
@@ -537,7 +531,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 47);
+            this.label2.Location = new System.Drawing.Point(34, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 28;
@@ -575,25 +569,6 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
-            // 
-            // searchPanel
-            // 
-            this.searchPanel.AutoScroll = true;
-            this.searchPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.searchPanel.ColumnCount = 3;
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
-            this.searchPanel.Location = new System.Drawing.Point(2, 102);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.RowCount = 1;
-            this.searchPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.searchPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.searchPanel.Size = new System.Drawing.Size(537, 231);
-            this.searchPanel.TabIndex = 12;
             // 
             // button1
             // 
@@ -776,51 +751,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sol";
             // 
-            // astroNames
-            // 
-            this.astroNames.ColumnCount = 1;
-            this.astroNames.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.astroNames.Location = new System.Drawing.Point(6, 63);
-            this.astroNames.Name = "astroNames";
-            this.astroNames.RowCount = 1;
-            this.astroNames.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.astroNames.Size = new System.Drawing.Size(67, 182);
-            this.astroNames.TabIndex = 56;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 63);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(611, 182);
-            this.tableLayoutPanel2.TabIndex = 55;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(79, 26);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(611, 33);
-            this.tableLayoutPanel1.TabIndex = 54;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -911,6 +841,77 @@
             this.label32.TabIndex = 69;
             this.label32.Text = "label32";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.checkBox3);
+            this.groupBox4.Controls.Add(this.checkBox2);
+            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.PictNanediVallis);
+            this.groupBox4.Location = new System.Drawing.Point(557, 285);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(277, 444);
+            this.groupBox4.TabIndex = 70;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Map tool";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(7, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 23);
+            this.button2.TabIndex = 54;
+            this.button2.Text = "Show Map Tool";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(206, 48);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(61, 17);
+            this.checkBox3.TabIndex = 53;
+            this.checkBox3.Text = "Coming";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(109, 48);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(56, 17);
+            this.checkBox2.TabIndex = 52;
+            this.checkBox2.Text = "Actual";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(7, 48);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(61, 17);
+            this.checkBox1.TabIndex = 51;
+            this.checkBox1.Text = "Passed";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // PictNanediVallis
+            // 
+            this.PictNanediVallis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictNanediVallis.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.PictNanediVallis.ErrorImage = ((System.Drawing.Image)(resources.GetObject("PictNanediVallis.ErrorImage")));
+            this.PictNanediVallis.Image = global::PineApple.Properties.Resources.nanedi_valles;
+            this.PictNanediVallis.InitialImage = ((System.Drawing.Image)(resources.GetObject("PictNanediVallis.InitialImage")));
+            this.PictNanediVallis.Location = new System.Drawing.Point(6, 71);
+            this.PictNanediVallis.Name = "PictNanediVallis";
+            this.PictNanediVallis.Size = new System.Drawing.Size(261, 367);
+            this.PictNanediVallis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictNanediVallis.TabIndex = 50;
+            this.PictNanediVallis.TabStop = false;
+            this.PictNanediVallis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictNanediVallis_MouseClick);
+            // 
             // globalPanel
             // 
             this.globalPanel.ColumnCount = 5;
@@ -948,11 +949,96 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // astroNames
+            // 
+            this.astroNames.ColumnCount = 1;
+            this.astroNames.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.astroNames.Location = new System.Drawing.Point(6, 63);
+            this.astroNames.Name = "astroNames";
+            this.astroNames.RowCount = 1;
+            this.astroNames.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.astroNames.Size = new System.Drawing.Size(67, 182);
+            this.astroNames.TabIndex = 56;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(79, 63);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(611, 182);
+            this.tableLayoutPanel2.TabIndex = 55;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(79, 26);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(611, 33);
+            this.tableLayoutPanel1.TabIndex = 54;
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.AutoScroll = true;
+            this.searchPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.searchPanel.ColumnCount = 3;
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.searchPanel.Location = new System.Drawing.Point(2, 102);
+            this.searchPanel.Name = "searchPanel";
+            this.searchPanel.RowCount = 1;
+            this.searchPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.searchPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.searchPanel.Size = new System.Drawing.Size(537, 231);
+            this.searchPanel.TabIndex = 12;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(219, 125);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(101, 17);
+            this.checkBox4.TabIndex = 61;
+            this.checkBox4.Text = "Space Vehicule";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(219, 148);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(84, 17);
+            this.checkBox5.TabIndex = 62;
+            this.checkBox5.Text = "Scaphandre";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 738);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label30);
@@ -976,7 +1062,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictNanediVallis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -985,6 +1070,9 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictNanediVallis)).EndInit();
             this.globalPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1061,6 +1149,13 @@
         private DoubleBufferedTableLayoutPanel astroNames;
         private System.Windows.Forms.ComboBox comboBoxGenericType;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
     }
 }
 
