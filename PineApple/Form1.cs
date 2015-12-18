@@ -944,6 +944,7 @@ namespace PineApple
                 label33.Enabled = true;
 
             showDay(mission.getSelectedDay());
+            mission.WriteActivityXML();
 
         }
 
