@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace PineApple
 {
-    class Activity
+    public class Activity
     {
         private static int _referenceNumber=0;
         private int _number;

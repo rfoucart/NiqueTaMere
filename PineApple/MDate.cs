@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PineApple
 {
-    class MDate
+    public class MDate
     {
         int _dayNumber;
         int _hours;

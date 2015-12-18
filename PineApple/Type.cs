@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PineApple
 {
-    class Type
+    public class Type
     {
         private string _genericName;
         private string[] _typeNames;
