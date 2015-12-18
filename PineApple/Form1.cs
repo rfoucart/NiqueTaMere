@@ -460,20 +460,24 @@ namespace PineApple
             }
             else
             {
-                Activity a = new Activity(richTextBox1.Text,
-                                    comboBoxGenericType.SelectedIndex,
-                                    comboBoxType.SelectedIndex,
-                                    0, // A changer !! Il faut le numéro de la location choisie
-                                    lastro,
-                                    false, // extern mission ?
-                                    false, //spaceVehicle ?
-                                    dateDeb,
-                                    dateFin);
-                mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
-                mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
-                showDay(dateDeb.getDay());//On rafraichit le tableau journalier
-                label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
-                SaveActivityButton.Text = "Save Mods";
+                bool b = mission.checkAvailabilityForUpdate(dateDeb, dateFin, lastro, ((Activity)ResetActivityButton.Tag).getNumber());
+                if (b)
+                {
+                    Activity a = new Activity(richTextBox1.Text,
+                                              comboBoxGenericType.SelectedIndex,
+                                              comboBoxType.SelectedIndex,
+                                              0, // A changer !! Il faut le numéro de la location choisie
+                                              lastro,
+                                              false, // extern mission ?
+                                              false, //spaceVehicle ?
+                                              dateDeb,
+                                              dateFin);
+                    mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
+                    mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                    showDay(dateDeb.getDay());//On rafraichit le tableau journalier
+                    label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+                    SaveActivityButton.Text = "Save Mods";
+                }
             }
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)
