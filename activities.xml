@@ -1,5 +1,5 @@
 <Activities>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>0</Number>
     <Description>
@@ -10,94 +10,101 @@
     <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
+    <Scaph>False</Scaph>
     <StartDate>1 0 0</StartDate>
     <EndDate>1 7 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>1</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
+    <Type>0</Type>
     <Astronautes>0 1 2</Astronautes>
     <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 8 0</StartDate>
-    <EndDate>1 12 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 7 0</StartDate>
+    <EndDate>1 8 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>2</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
+    <Type>3</Type>
     <Astronautes>0 1 2</Astronautes>
     <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 14 0</StartDate>
-    <EndDate>1 19 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 8 0</StartDate>
+    <EndDate>1 12 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>3</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
+    <Type>0</Type>
     <Astronautes>0 1 2</Astronautes>
     <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 19 0</StartDate>
-    <EndDate>1 21 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 12 0</StartDate>
+    <EndDate>1 14 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>4</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
+    <Type>3</Type>
     <Astronautes>0 1 2</Astronautes>
     <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 21 0</StartDate>
-    <EndDate>1 23 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 14 0</StartDate>
+    <EndDate>1 19 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>5</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
+    <Type>0</Type>
     <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
+    <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>2 0 0</StartDate>
-    <EndDate>2 7 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 19 0</StartDate>
+    <EndDate>1 21 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>6</Number>
     <Description>
     </Description>
     <GenerycType>0</GenerycType>
-    <Type>1</Type>
-    <Astronautes>0 2</Astronautes>
-    <Location>0</Location>
+    <Type>3</Type>
+    <Astronautes>0 1 2</Astronautes>
+    <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>2 8 0</StartDate>
-    <EndDate>2 12 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 21 0</StartDate>
+    <EndDate>1 23 0</EndDate>
   </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
+  <ReferenceNumber>8</ReferenceNumber>
   <Activity>
     <Number>7</Number>
     <Description>
@@ -105,122 +112,11 @@
     <GenerycType>0</GenerycType>
     <Type>1</Type>
     <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
+    <Location>1</Location>
     <ExternMission>False</ExternMission>
     <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>2 7 0</StartDate>
-    <EndDate>2 8 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>8</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>1</Type>
-    <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>2 8 0</StartDate>
-    <EndDate>2 12 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>9</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>1</Type>
-    <Astronautes>0 2</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 12 0</StartDate>
-    <EndDate>1 14 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>10</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>0</Type>
-    <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>164 11 0</StartDate>
-    <EndDate>164 10 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>11</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>1</Type>
-    <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 7 0</StartDate>
-    <EndDate>1 8 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>12</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>1</Type>
-    <Astronautes>0 1 2</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>1 7 0</StartDate>
-    <EndDate>1 8 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>13</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>0</Type>
-    <Astronautes>0</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>151 1 0</StartDate>
-    <EndDate>151 2 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>15</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>0</Type>
-    <Astronautes>0</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>151 3 0</StartDate>
-    <EndDate>151 4 0</EndDate>
-  </Activity>
-  <ReferenceNumber>17</ReferenceNumber>
-  <Activity>
-    <Number>16</Number>
-    <Description>
-    </Description>
-    <GenerycType>0</GenerycType>
-    <Type>0</Type>
-    <Astronautes>0</Astronautes>
-    <Location>0</Location>
-    <ExternMission>False</ExternMission>
-    <SpaceVehicle>False</SpaceVehicle>
-    <StartDate>151 3 0</StartDate>
-    <EndDate>151 4 0</EndDate>
+    <Scaph>False</Scaph>
+    <StartDate>1 23 0</StartDate>
+    <EndDate>1 24 40</EndDate>
   </Activity>
 </Activities>
