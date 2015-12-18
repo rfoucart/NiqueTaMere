@@ -424,8 +424,11 @@ namespace PineApple
             groupBox1.Text = "Activity";
             //On crée la liste des astronautes sélectionnés
             List<int> lastro = new List<int>();
-            foreach(int i in checkedListBox1.SelectedIndices)
-                lastro.Add(i);
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                    lastro.Add(i);
+            }
             //On crée les dates de début et de fin à partir des combo boxes
             MDate dateDeb = new MDate((int)numericUpDown1.Value,comboBoxStartHour.SelectedIndex,comboBoxStartMinutes.SelectedIndex*10);
             MDate dateFin = new MDate((int)numericUpDown1.Value,comboBoxEndHour.SelectedIndex,comboBoxEndMinutes.SelectedIndex*10);
@@ -433,12 +436,14 @@ namespace PineApple
             mission.newActivity(richTextBox1.Text,
                                       comboBoxGenericType.SelectedIndex,
                                       comboBoxType.SelectedIndex,
-                                      0, // A changer !! Il faut le numéro de la location actuelle
+                                      0, // A changer !! Il faut le numéro de la location choisie
                                       lastro,
                                       false, // extern mission ?
                                       false, //spaceVehicle ?
                                       dateDeb,
                                       dateFin);
+            mission.WriteActivityXML();
+            
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)
         {
