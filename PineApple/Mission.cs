@@ -330,7 +330,8 @@ namespace PineApple
         public bool checkAvailabilityForUpdate(MDate start, MDate end, List<int> astro, int num)
         {
             List<Activity> liste = new List<Activity>(0);
-            liste = _activities.Where(x => ((x.getEndDate() > start && x.getEndDate() <= end) || (x.getStartDate() < end && x.getStartDate() >= start) || (x.getStartDate() <= start && x.getEndDate() >= end)) && (x.getNumber() != num)).ToList(); bool availability = true;
+            liste = _activities.Where(x => ((x.getEndDate() > start && x.getEndDate() <= end) || (x.getStartDate() < end && x.getStartDate() >= start) || (x.getStartDate() <= start && x.getEndDate() >= end)) && (x.getNumber() != num)).ToList(); 
+            bool availability = true;
             if (liste.Count == 0)
             {
                 return true;
