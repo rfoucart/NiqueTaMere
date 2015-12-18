@@ -50,5 +50,26 @@ namespace PineApple
             _hours = int.Parse(mdateTab[1]);
             _minutes = int.Parse(mdateTab[2]);
         }
+        public static bool operator <(MDate test, MDate liste)
+        {
+
+                return test.getDay() < liste.getDay() ?true:false;
+        }
+        public static bool operator >(MDate test, MDate liste)
+        {
+
+            return test.getDay() > liste.getDay() ? true : false;
+        }
+        public static bool operator <=(MDate test, MDate liste)
+        {
+
+            return test.getDay() <= liste.getDay() ? true : false;
+        }
+        public static bool operator >=(MDate test, MDate liste)
+        {
+
+            return test.getDay() >= liste.getDay() ? true : false;
+        }
+
     }
 }
