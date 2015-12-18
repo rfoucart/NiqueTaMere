@@ -386,6 +386,7 @@ namespace PineApple
             fillActivityPanel(a);
             groupBox1.Text = "Activity";
             SaveActivityButton.Text = "Save Mods";
+            creating = false;
         }
         //rempli les champs juste grace au numero de l'activité  tout les cas 
         private void fillActivityPanel(Activity a)
@@ -419,6 +420,7 @@ namespace PineApple
                 checkedListBox1.SetItemChecked(i, false);
             ResetActivityButton.Tag = new Activity();
             SaveActivityButton.Text = "Save Activity";
+            creating = true;
         }
 
         private void SaveActivityButton_Click(object sender, EventArgs e)
