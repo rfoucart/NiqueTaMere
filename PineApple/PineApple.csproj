@@ -108,13 +108,17 @@
     <None Include="bin\Debug\obi.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\car3.png" />
+    <None Include="Resources\car3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\astronauts.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\beaker5.png" />
+    <None Include="Resources\beaker5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

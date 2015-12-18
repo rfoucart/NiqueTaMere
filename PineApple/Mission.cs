@@ -56,6 +56,13 @@ namespace PineApple
         {
             return _genericTypes;
         }
+        public Location getLocation(int activity)
+        {
+            Location l =new Location(" ",0,0);
+            Activity a = _activities.Find(x => x.getNumber() == activity);
+            l = _locations.Find(x => x.getNumber() == a.getLocation());
+            return l;
+        }
         public MDate getCurrentDay()
         {
             return _currentDay;
@@ -110,9 +117,10 @@ namespace PineApple
             _activities.RemoveAll(x => x.getNumber() == number);
             WriteActivityXML();
         }
-        public void newLocation(string name, int posx, int posy)
+        public int newLocation(string name, int posx, int posy)
         {
             _locations.Add(new Location(name, posx, posy));
+            return _locations.FindLast(x => x.getNumber() == Location.getRefNumber()).getNumber();
         }
         public void newLocation(string name, int posx, int posy, int number)
         {
@@ -356,7 +364,11 @@ namespace PineApple
             int ind = _activities.FindIndex(x => x.getNumber() == num);
             _activities[ind].updateActivity(a);
         }
-
+        public int existanceDuLieu(string name, int posx, int posy)
+        {
+            int f = _locations.Find(x => x.getName() == name && x.getLocation()[0] == posx && x.getLocation()[1] == posy).getNumber();
+            return f;
+        }
         public List<Location> getVehiculeLocations(int periodStart, int periodEnd)
         {
             List<Location> l = new List<Location>(0);

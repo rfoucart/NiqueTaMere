@@ -18,12 +18,12 @@ namespace PineApple
         private List<Button> listButtonPanel;
         private int daySheet;
         private bool creating = true;
+  
         public Form1()
         {
             InitializeComponent();
             listButtonPanel = new List<Button>(0);
             //mission = new Mission("wasabi",numberOfDays);
-
 
             this.ReadMissionXML();
             mission.ReadActivityXML();
@@ -97,6 +97,7 @@ namespace PineApple
                     cmd.Margin = new Padding(0, 0, 0, 0);
                     globalPanel.Controls.Add(cmd, i - 1, j - 1);
                     listButtonPanel.Add(cmd);
+
                 }
             }
         }
@@ -304,7 +305,10 @@ namespace PineApple
 
             foreach (XmlNode location in locations)
             {
-                mission.newLocation(location["Name"].InnerText, int.Parse(location["POSX"].InnerText), int.Parse(location["POSY"].InnerText), int.Parse(location["Number"].InnerText));
+                mission.newLocation(location["Name"].InnerText, 
+                    int.Parse(location["POSX"].InnerText), 
+                    int.Parse(location["POSY"].InnerText), 
+                    int.Parse(location["Number"].InnerText));
             }
 
             //Add the ref number to the class
@@ -316,6 +320,9 @@ namespace PineApple
             foreach (Astronaute astro in mission.getAstronautes())
                 checkedListBox1.Items.Add(astro.getName());
             ResetActivityButton.Tag = new Activity();
+            textBox1.Text = "0";
+            textBox2.Text = "0";
+            textBox3.Text = "Base";
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -399,6 +406,9 @@ namespace PineApple
             comboBoxStartMinutes.SelectedIndex = a.getStartDate().getMinutes() / 10;
             comboBoxEndHour.SelectedIndex = a.getEndDate().getHours();
             comboBoxEndMinutes.SelectedIndex = a.getEndDate().getMinutes() / 10;
+            textBox1.Text = mission.getLocation(a.getNumber()).getLocation()[0].ToString();
+            textBox2.Text = mission.getLocation(a.getNumber()).getLocation()[1].ToString();
+            textBox3.Text = mission.getLocation(a.getNumber()).getName();
             richTextBox1.Text = a.getDescription();
             comboBoxGenericType.SelectedIndex = a.getIndexOfGenericType();
             comboBoxType.SelectedIndex = a.getIndexOfType();
@@ -422,6 +432,9 @@ namespace PineApple
                 checkedListBox1.SetItemChecked(i, false);
             ResetActivityButton.Tag = new Activity();
             SaveActivityButton.Text = "Save Activity";
+            textBox1.Text = "0";
+            textBox2.Text = "0";
+            textBox3.Text = "Base";
             creating = true;
         }
 
@@ -450,11 +463,21 @@ namespace PineApple
                         explo = true;
                     }
                 if (b)
-                {  
+                {
+                    int location;
+
+                    if (mission.existanceDuLieu(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) == 0)
+                    {
+                        location = mission.newLocation(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
+                    }
+                    else
+                    {
+                        location = mission.existanceDuLieu(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
+                    }
                     mission.newActivity(richTextBox1.Text,
                                         comboBoxGenericType.SelectedIndex,
                                         comboBoxType.SelectedIndex,
-                                        0, // A changer !! Il faut le numéro de la location choisie
+                                        location, // A changer !! Il faut le numéro de la location choisie
                                         lastro,
                                         explo, // extern mission ?
                                         checkBox4.Checked, //spaceVehicle ?
@@ -462,6 +485,7 @@ namespace PineApple
                                         dateDeb,
                                         dateFin);
                     mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                    WriteMissionXML();
                     showDay(dateDeb.getDay());//On rafraichit le tableau journalier
                     label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
                     SaveActivityButton.Text = "Save Mods";
@@ -701,8 +725,78 @@ namespace PineApple
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if ((sender as ComboBox).SelectedIndex);
+            if ((sender as ComboBox).SelectedIndex==0 && comboBoxGenericType.SelectedIndex==1)
+            {
+                checkBox4.Enabled=true;
+                checkBox5.Enabled = true;
+
+
+                checkBox4.Checked=true;
+                checkBox5.Checked = false;
+
+                textBox3.Enabled = true;
+                
+                textBox1.Enabled = true;
+                
+                textBox2.Enabled = true;
+                
+                button4.Enabled = true;
+
+            }
+            else if ((sender as ComboBox).SelectedIndex == 4 && comboBoxGenericType.SelectedIndex == 1)
+            {
+                textBox3.Enabled = true;
+                textBox1.Enabled = true;
+                textBox2.Enabled = true;
+
+                button4.Enabled = true;
+            }
+            else
+            {
+                checkBox4.Enabled=false;
+                checkBox5.Enabled =false;
+
+                checkBox4.Checked=false;
+                checkBox5.Checked=false;
+
+                textBox3.Enabled = false;
+                textBox3.Text = "Base";
+                textBox2.Text = "0";
+                textBox1.Text = "0";
+                textBox1.Enabled = false;
+                textBox2.Enabled= false;
+
+
+                button4.Enabled = false;
+            }
+            
         }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox4.Checked)
+            {
+                checkBox5.Checked = false;
+            }
+            else
+            {
+                checkBox5.Checked = true;
+            }
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+            {
+                checkBox4.Checked = false;
+            }
+            else
+            {
+                checkBox4.Checked = true;
+            }
+        }
+        
+        
         
     }   
 }

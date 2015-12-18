@@ -46,6 +46,10 @@ namespace PineApple
                 _referenceNumber = refNumber;
             }
         }
+        public string getName()
+        {
+            return _name;
+        }
         /// <summary>
         /// Return (array) the location in pixels/the origin 
         /// </summary>

@@ -96,14 +96,14 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.PictNanediVallis = new System.Windows.Forms.PictureBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.globalPanel = new PineApple.DoubleBufferedTableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.astroNames = new PineApple.DoubleBufferedTableLayoutPanel();
             this.tableLayoutPanel2 = new PineApple.DoubleBufferedTableLayoutPanel();
             this.tableLayoutPanel1 = new PineApple.DoubleBufferedTableLayoutPanel();
             this.searchPanel = new PineApple.DoubleBufferedTableLayoutPanel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -912,6 +912,28 @@
             this.PictNanediVallis.TabStop = false;
             this.PictNanediVallis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictNanediVallis_MouseClick);
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(219, 125);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(101, 17);
+            this.checkBox4.TabIndex = 61;
+            this.checkBox4.Text = "Space Vehicule";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(219, 148);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(84, 17);
+            this.checkBox5.TabIndex = 62;
+            this.checkBox5.Text = "Scaphandre";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
             // globalPanel
             // 
             this.globalPanel.ColumnCount = 5;
@@ -1001,7 +1023,7 @@
             this.searchPanel.ColumnCount = 3;
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
@@ -1012,26 +1034,6 @@
             this.searchPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.searchPanel.Size = new System.Drawing.Size(537, 231);
             this.searchPanel.TabIndex = 12;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(219, 125);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(101, 17);
-            this.checkBox4.TabIndex = 61;
-            this.checkBox4.Text = "Space Vehicule";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(219, 148);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(84, 17);
-            this.checkBox5.TabIndex = 62;
-            this.checkBox5.Text = "Scaphandre";
-            this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
