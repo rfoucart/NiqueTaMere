@@ -366,8 +366,15 @@ namespace PineApple
         }
         public int existanceDuLieu(string name, int posx, int posy)
         {
+            try
+            {
             int f = _locations.Find(x => x.getName() == name && x.getLocation()[0] == posx && x.getLocation()[1] == posy).getNumber();
             return f;
+            }
+            catch
+            {
+            return 0;
+            }
         }
         public List<Location> getVehiculeLocations(int periodStart, int periodEnd)
         {

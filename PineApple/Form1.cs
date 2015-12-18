@@ -458,7 +458,7 @@ namespace PineApple
                 bool b = mission.checkAvailability(dateDeb, dateFin, lastro);
 
                 bool explo = false;
-                if (comboBoxGenericType.SelectedIndex==1 && comboBoxType.SelectedIndex==4)
+                if (comboBoxGenericType.SelectedIndex==1 && comboBoxType.SelectedIndex==4 )
                     {
                         explo = true;
                     }
@@ -499,12 +499,22 @@ namespace PineApple
                 {
                     explo = true;
                 }
+                int location;
+                if (mission.existanceDuLieu(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text)) == 0)
+                {
+                    location = mission.newLocation(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
+                }
+                else
+                {
+                    location = mission.existanceDuLieu(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
+                }
+
                 if (b)
                 {
                     Activity a = new Activity(richTextBox1.Text,
                                               comboBoxGenericType.SelectedIndex,
                                               comboBoxType.SelectedIndex,
-                                              0, // A changer !! Il faut le numéro de la location choisie
+                                              location, // A changer !! Il faut le numéro de la location choisie
                                               lastro,
                                               explo, // extern mission ?
                                               checkBox4.Checked, //spaceVehicle ?
@@ -749,15 +759,27 @@ namespace PineApple
                 textBox1.Enabled = true;
                 textBox2.Enabled = true;
 
+                checkBox4.Checked = false;
+                checkBox5.Checked = false;
+
+                checkBox4.Enabled = false;
+                checkBox5.Enabled = false;
+
+
+                
+
                 button4.Enabled = true;
             }
             else
             {
+
+                checkBox4.Checked = false;
+                checkBox5.Checked = false;
+
                 checkBox4.Enabled=false;
                 checkBox5.Enabled =false;
 
-                checkBox4.Checked=false;
-                checkBox5.Checked=false;
+                
 
                 textBox3.Enabled = false;
                 textBox3.Text = "Base";
@@ -782,6 +804,7 @@ namespace PineApple
             {
                 checkBox5.Checked = true;
             }
+
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -794,7 +817,9 @@ namespace PineApple
             {
                 checkBox4.Checked = true;
             }
+ 
         }
+
         
         
         
