@@ -52,21 +52,27 @@ namespace PineApple
         }
         public static bool operator <(MDate test, MDate liste)
         {
-            return test.getDay() < liste.getDay() ?true:false;
+            int t = (24 * 60 + 40) * test.getDay() + test.getHours() * 60 + test.getMinutes();
+            int l = (24 * 60 + 40) * liste.getDay() + liste.getHours() * 60 + liste.getMinutes();
+            return t < l ? true :false;
         }
         public static bool operator >(MDate test, MDate liste)
         {
-
-            return test.getDay() > liste.getDay() ? true : false;
+            int t = (24 * 60 + 40) * test.getDay() + test.getHours() * 60 + test.getMinutes();
+            int l = (24 * 60 + 40) * liste.getDay() + liste.getHours() * 60 + liste.getMinutes();
+            return t > l ? true : false;
         }
         public static bool operator <=(MDate test, MDate liste)
         {
-
-            return test.getDay() <= liste.getDay() ? true : false;
+            int t = (24 * 60 + 40) * test.getDay() + test.getHours() * 60 + test.getMinutes();
+            int l = (24 * 60 + 40) * liste.getDay() + liste.getHours() * 60 + liste.getMinutes();
+            return t <= l? true : false;
         }
         public static bool operator >=(MDate test, MDate liste)
         {
-            return test.getDay() >= liste.getDay() ? true : false;
+            int t = (24 * 60 + 40) * test.getDay() + test.getHours() * 60 + test.getMinutes();
+            int l = (24 * 60 + 40) * liste.getDay() + liste.getHours() * 60 + liste.getMinutes();
+            return t>= l ? true : false;
         }
     }
 }

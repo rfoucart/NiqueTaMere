@@ -302,17 +302,28 @@ namespace PineApple
         }
 
         //Verifie la disponibilité d'un créneaux
-        public bool checkAvailability(MDate start, MDate end)
+        public bool checkAvailability(MDate start, MDate end, List<int> astro )
         {
             List<Activity> liste = new List<Activity>(0);
-            liste=_activities.Where(x=>(x.getEndDate()>start&&x.getEndDate()<=end)||x.getStartDate()<end&&x.getStartDate()>=start).ToList();
+            liste=_activities.Where(x=>(x.getEndDate()>start&&x.getEndDate()<=end)||x.getStartDate()<end&&x.getStartDate()>=start || x.getStartDate()<=start && x.getEndDate() >= end).ToList();
+            bool availability=true;
             if (liste.Count == 0)
             {
                 return true;
             }
             else
             {
-                return false;
+                foreach(int a in astro)
+                {
+                    foreach(Activity b in liste)
+                    {
+                        if(availability==true && b.getAstronautes().Contains(a))
+                        {
+                            availability= false;
+                        }
+                    }
+                }
+                return availability;
             }
         }
     }

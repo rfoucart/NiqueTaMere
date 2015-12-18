@@ -425,15 +425,17 @@ namespace PineApple
             //On crée les dates de début et de fin à partir des combo boxes
             MDate dateDeb = new MDate((int)numericUpDown1.Value, comboBoxStartHour.SelectedIndex, comboBoxStartMinutes.SelectedIndex * 10);
             MDate dateFin = new MDate((int)numericUpDown1.Value, comboBoxEndHour.SelectedIndex, comboBoxEndMinutes.SelectedIndex * 10);
-            if (mission.checkAvailability(dateDeb, dateFin))
+            
+            //On crée la liste des astronautes sélectionnés
+            List<int> lastro = new List<int>();
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
-                //On crée la liste des astronautes sélectionnés
-                List<int> lastro = new List<int>();
-                for (int i = 0; i < checkedListBox1.Items.Count; i++)
-                {
-                    if (checkedListBox1.GetItemChecked(i))
-                        lastro.Add(i);
-                }
+                if (checkedListBox1.GetItemChecked(i))
+                    lastro.Add(i);
+            }
+            bool b = mission.checkAvailability(dateDeb, dateFin,lastro);
+            if (b)
+            {      
                 //Puis on crée l'activité pour l'ajouter à la mission
                 mission.newActivity(richTextBox1.Text,
                                     comboBoxGenericType.SelectedIndex,
