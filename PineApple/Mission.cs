@@ -409,5 +409,32 @@ namespace PineApple
             }
             return l;
         }
+        public struct loca
+        {
+            public string name;
+            public string posx;
+            public string posy;
+            public string id;
+        }
+        public List<loca> getPassedLocations()
+        {
+
+            List<Activity> locationsPassed = _activities.Where(x=>x.getEndDate()<=_currentDay).ToList();
+            List<int> lp=locationsPassed.Select(p=>p.getLocation()).ToList();
+            lp=lp.Distinct().ToList();
+            List<loca> Loca = new List<loca>(0);
+            foreach(int i in lp)
+            {
+                loca l = new loca();
+
+                l.name = _locations.Find(x => x.getNumber() == i).getName();
+                l.posx = _locations.Find(x => x.getNumber() == i).getLocation()[0].ToString();
+                l.posy = _locations.Find(x => x.getNumber() == i).getLocation()[1].ToString();
+                l.id = _locations.Find(x => x.getNumber() == i).getNumber().ToString();
+
+                Loca.Add(new loca());
+            }
+            return Loca;
+        }
     }
 }

@@ -32,6 +32,8 @@
             this.PreviousButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.comboBoxGenericType = new System.Windows.Forms.ComboBox();
             this.ResetActivityButton = new System.Windows.Forms.Button();
@@ -40,7 +42,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.NewActivityButton = new System.Windows.Forms.Button();
             this.SaveActivityButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -96,8 +97,6 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.PictNanediVallis = new System.Windows.Forms.PictureBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.globalPanel = new PineApple.DoubleBufferedTableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
             this.astroNames = new PineApple.DoubleBufferedTableLayoutPanel();
@@ -150,7 +149,6 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.NewActivityButton);
             this.groupBox1.Controls.Add(this.SaveActivityButton);
-            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label13);
@@ -180,6 +178,28 @@
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "New Activity";
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(219, 148);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(84, 17);
+            this.checkBox5.TabIndex = 62;
+            this.checkBox5.Text = "Scaphandre";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(219, 125);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(101, 17);
+            this.checkBox4.TabIndex = 61;
+            this.checkBox4.Text = "Space Vehicule";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // deleteButton
             // 
@@ -260,16 +280,6 @@
             this.SaveActivityButton.Text = "Save Activity";
             this.SaveActivityButton.UseVisualStyleBackColor = true;
             this.SaveActivityButton.Click += new System.EventHandler(this.SaveActivityButton_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(307, 221);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(57, 40);
-            this.button4.TabIndex = 51;
-            this.button4.Text = "Add Location";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.addLocation);
             // 
             // richTextBox1
             // 
@@ -894,6 +904,7 @@
             this.checkBox1.TabIndex = 51;
             this.checkBox1.Text = "Passed";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.showPassedActivitiesLocation);
             // 
             // PictNanediVallis
             // 
@@ -911,28 +922,6 @@
             this.PictNanediVallis.TabIndex = 50;
             this.PictNanediVallis.TabStop = false;
             this.PictNanediVallis.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictNanediVallis_MouseClick);
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(219, 125);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(101, 17);
-            this.checkBox4.TabIndex = 61;
-            this.checkBox4.Text = "Space Vehicule";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(219, 148);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(84, 17);
-            this.checkBox5.TabIndex = 62;
-            this.checkBox5.Text = "Scaphandre";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // globalPanel
             // 
@@ -1023,7 +1012,7 @@
             this.searchPanel.ColumnCount = 3;
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
@@ -1113,7 +1102,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button NewActivityButton;
         private System.Windows.Forms.Button SaveActivityButton;
         private System.Windows.Forms.ComboBox comboBoxType;

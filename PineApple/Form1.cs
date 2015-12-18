@@ -400,6 +400,61 @@ namespace PineApple
         //rempli les champs juste grace au numero de l'activité  tout les cas 
         private void fillActivityPanel(Activity a)
         {
+            if(a.getStartDate()<mission.getCurrentDay() && a.getEndDate()<mission.getCurrentDay())
+            {
+                numericUpDown1.Enabled = false;
+                comboBoxGenericType.Enabled = false;
+                comboBoxType.Enabled = false;
+                checkBox4.Enabled = false;
+                checkBox5.Enabled = false;
+
+                textBox3.Enabled = false;
+                textBox2.Enabled = false;
+                textBox1.Enabled = false;
+
+                richTextBox1.Enabled = false;
+
+                checkedListBox1.Enabled = false;
+
+                SaveActivityButton.Enabled = false;
+                deleteButton.Enabled = false;
+                ResetActivityButton.Enabled = false;
+
+                comboBoxEndMinutes.Enabled=false;
+                comboBoxEndHour.Enabled = false;
+
+                comboBoxStartMinutes.Enabled = false;
+                comboBoxStartHour.Enabled = false;
+
+
+
+            }
+            else
+            {
+                numericUpDown1.Enabled = true;
+                comboBoxGenericType.Enabled = true;
+                comboBoxType.Enabled = true;
+                checkBox4.Enabled = true;
+                checkBox5.Enabled = true;
+
+                textBox3.Enabled = true;
+                textBox2.Enabled = true;
+                textBox1.Enabled = true;
+
+                richTextBox1.Enabled = true;
+
+                checkedListBox1.Enabled = true;
+
+                SaveActivityButton.Enabled = true;
+                deleteButton.Enabled = true;
+                ResetActivityButton.Enabled = true;
+
+                comboBoxEndMinutes.Enabled = true;
+                comboBoxEndHour.Enabled = true;
+
+                comboBoxStartMinutes.Enabled = true;
+                comboBoxStartHour.Enabled = true;
+            }
             //Remplissage des champs de l'activité
             numericUpDown1.Value = a.getDay();
             comboBoxStartHour.SelectedIndex = a.getStartDate().getHours();
@@ -416,10 +471,35 @@ namespace PineApple
                 checkedListBox1.SetItemChecked(i, false);
             foreach (int numAstro in a.getAstronautes()) //Pour resélectionner les bons
                 checkedListBox1.SetItemChecked(numAstro, true);
+            
         }
 
         private void NewActivityButton_Click(object sender, EventArgs e)
         {
+            numericUpDown1.Enabled = true;
+            comboBoxGenericType.Enabled = true;
+            comboBoxType.Enabled = true;
+            checkBox4.Enabled = true;
+            checkBox5.Enabled = true;
+
+            textBox3.Enabled = true;
+            textBox2.Enabled = true;
+            textBox1.Enabled = true;
+
+            richTextBox1.Enabled = true;
+
+            checkedListBox1.Enabled = true;
+
+            SaveActivityButton.Enabled = true;
+            deleteButton.Enabled = true;
+            ResetActivityButton.Enabled = true;
+
+            comboBoxEndMinutes.Enabled = true;
+            comboBoxEndHour.Enabled = true;
+
+            comboBoxStartMinutes.Enabled = true;
+            comboBoxStartHour.Enabled = true;
+
             groupBox1.Text = "New Activity"; // Changement du nom pour montrer qu'on crée une activité
             comboBoxStartHour.Text = string.Empty;
             comboBoxStartMinutes.Text = string.Empty;
@@ -535,6 +615,27 @@ namespace PineApple
             fillActivityPanel((Activity)ResetActivityButton.Tag);
         }
 
+        private void showPassedActivitiesLocation(object sender, EventArgs e)
+        {
+            List<Mission.loca> pl=mission.getPassedLocations();
+            foreach(Mission.loca a in pl)
+            {
+                PictureBox pb = new PictureBox();
+                pb.Image = new Bitmap(Image.FromFile("mol.png"), new Size(20, 20));
+                
+                PictNanediVallis.Controls.Add(pb);
+                pb.Location = new Point(int.Parse(a.posx + 700), int.Parse(a.posy + 1000));
+            }
+            
+        }
+        private void showActualActivitiesLocation()
+        {
+
+        }
+        private void showComingActivitiesLocation()
+        {
+
+        }
         //Fonction recherche aprés click sur le bouton search du panel search.
         private void search(object sender, EventArgs e)
         {
@@ -738,10 +839,11 @@ namespace PineApple
             if ((sender as ComboBox).SelectedIndex==0 && comboBoxGenericType.SelectedIndex==1)
             {
                 checkBox4.Enabled=true;
+
                 checkBox5.Enabled = true;
 
-
                 checkBox4.Checked=true;
+
                 checkBox5.Checked = false;
 
                 textBox3.Enabled = true;
@@ -750,8 +852,6 @@ namespace PineApple
                 
                 textBox2.Enabled = true;
                 
-                button4.Enabled = true;
-
             }
             else if ((sender as ComboBox).SelectedIndex == 4 && comboBoxGenericType.SelectedIndex == 1)
             {
@@ -764,11 +864,7 @@ namespace PineApple
 
                 checkBox4.Enabled = false;
                 checkBox5.Enabled = false;
-
-
                 
-
-                button4.Enabled = true;
             }
             else
             {
@@ -789,7 +885,7 @@ namespace PineApple
                 textBox2.Enabled= false;
 
 
-                button4.Enabled = false;
+                
             }
             
         }
