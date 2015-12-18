@@ -312,7 +312,7 @@ namespace PineApple
         {
             foreach (Astronaute astro in mission.getAstronautes())
                 checkedListBox1.Items.Add(astro.getName());
-            
+            ResetActivityButton.Tag = new Activity();
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -415,8 +415,7 @@ namespace PineApple
             comboBoxType.Text = string.Empty;
             for (int i = 0; i < checkedListBox1.Items.Count; i++)//On déselectionne tous les astronautes
                 checkedListBox1.SetItemChecked(i, false);
-            Activity a = new Activity();
-            ResetActivityButton.Tag = a;
+            ResetActivityButton.Tag = new Activity();
         }
 
         private void SaveActivityButton_Click(object sender, EventArgs e)

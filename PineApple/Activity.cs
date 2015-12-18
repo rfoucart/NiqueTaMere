@@ -36,7 +36,7 @@ namespace PineApple
             _externMission = false;
             _spaceVehicle = false;
             _astronautes = null;
-            MDate d = new MDate();
+            MDate d = new MDate(1, 0, 0);
             _startDate = d;
             _endDate = d;
         }
