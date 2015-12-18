@@ -36,8 +36,9 @@ namespace PineApple
             _externMission = false;
             _spaceVehicle = false;
             _astronautes = null;
-            _startDate = null;
-            _endDate = null;
+            MDate d = new MDate();
+            _startDate = d;
+            _endDate = d;
         }
         public Activity(string description, int genericType ,int type, int location, List<int> astronautes, bool externMission, bool spaceVehicle, MDate startDate, MDate endDate)
         {

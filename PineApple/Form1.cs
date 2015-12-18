@@ -389,6 +389,7 @@ namespace PineApple
         private void fillActivityPanel(Activity a)
         {
             //Remplissage des champs de l'activité
+            numericUpDown1.Value = mission.getSelectedDay();
             comboBoxStartHour.SelectedIndex = a.getStartDate().getHours();
             comboBoxStartMinutes.SelectedIndex = a.getStartDate().getMinutes() / 10;
             comboBoxEndHour.SelectedIndex = a.getEndDate().getHours();
@@ -421,6 +422,23 @@ namespace PineApple
         private void SaveActivityButton_Click(object sender, EventArgs e)
         {
             groupBox1.Text = "Activity";
+            //On crée la liste des astronautes sélectionnés
+            List<int> lastro = new List<int>();
+            foreach(int i in checkedListBox1.SelectedIndices)
+                lastro.Add(i);
+            //On crée les dates de début et de fin à partir des combo boxes
+            MDate dateDeb = new MDate((int)numericUpDown1.Value,comboBoxStartHour.SelectedIndex,comboBoxStartMinutes.SelectedIndex*10);
+            MDate dateFin = new MDate((int)numericUpDown1.Value,comboBoxEndHour.SelectedIndex,comboBoxEndMinutes.SelectedIndex*10);
+            //Puis on crée l'activité pour l'ajouter à la mission
+            mission.newActivity(richTextBox1.Text,
+                                      comboBoxGenericType.SelectedIndex,
+                                      comboBoxType.SelectedIndex,
+                                      0, // A changer !! Il faut le numéro de la location actuelle
+                                      lastro,
+                                      false, // extern mission ?
+                                      false, //spaceVehicle ?
+                                      dateDeb,
+                                      dateFin);
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)
         {
@@ -583,6 +601,13 @@ namespace PineApple
             //string value = ((KeyValuePair<string, string>)searchGTypeCombo.SelectedItem).Value;
 
 
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Activity a = (Activity)ResetActivityButton.Tag;
+            mission.deleteActivity(a.getNumber());
+            showDay(a.getDay()); // Rafraichit le panel des activités de la journée
         }
     }
 }
