@@ -432,7 +432,7 @@ namespace PineApple
                 l.posy = _locations.Find(x => x.getNumber() == i).getLocation()[1].ToString();
                 l.id = _locations.Find(x => x.getNumber() == i).getNumber().ToString();
 
-                Loca.Add(new loca());
+                Loca.Add(l);
             }
             return Loca;
         }

@@ -588,7 +588,6 @@ namespace PineApple
                 {
                     location = mission.existanceDuLieu(textBox3.Text, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
                 }
-
                 if (b)
                 {
                     Activity a = new Activity(richTextBox1.Text,
@@ -620,11 +619,14 @@ namespace PineApple
             List<Mission.loca> pl=mission.getPassedLocations();
             foreach(Mission.loca a in pl)
             {
-                PictureBox pb = new PictureBox();
+                Button pb = new Button();
+            
                 pb.Image = new Bitmap(Image.FromFile("mol.png"), new Size(20, 20));
-                
-                PictNanediVallis.Controls.Add(pb);
+                pb.BackColor = Color.Black;
                 pb.Location = new Point(int.Parse(a.posx + 700), int.Parse(a.posy + 1000));
+                PictNanediVallis.Controls.Add(pb);
+                groupBox1.Controls.Add(pb);
+                pb.BringToFront();
             }
             
         }
