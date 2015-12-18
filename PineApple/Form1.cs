@@ -400,7 +400,7 @@ namespace PineApple
             richTextBox1.Text = a.getDescription();
             comboBoxGenericType.SelectedIndex = a.getIndexOfGenericType();
             comboBoxType.SelectedIndex = a.getIndexOfType();
-            for (int i = 1; i < checkedListBox1.Items.Count; i++)//On déselectionne tous les astronautes
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)//On déselectionne tous les astronautes
                 checkedListBox1.SetItemChecked(i, false);
             foreach (int numAstro in a.getAstronautes()) //Pour resélectionner les bons
                 checkedListBox1.SetItemChecked(numAstro, true);
@@ -438,11 +438,11 @@ namespace PineApple
                 if (checkedListBox1.GetItemChecked(i))
                     lastro.Add(i);
             }
-            bool b = mission.checkAvailability(dateDeb, dateFin, lastro);
-            if (b)
-            {
-                if (creating) // Si on est en mode création
-                {//Puis on crée l'activité pour l'ajouter à la mission
+            if (creating) // Si on est en mode création
+            {//Puis on crée l'activité pour l'ajouter à la mission
+                bool b = mission.checkAvailability(dateDeb, dateFin, lastro);
+                if (b)
+                {
                     mission.newActivity(richTextBox1.Text,
                                         comboBoxGenericType.SelectedIndex,
                                         comboBoxType.SelectedIndex,
@@ -457,23 +457,23 @@ namespace PineApple
                     label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
                     SaveActivityButton.Text = "Save Mods";
                 }
-                else
-                {
-                    Activity a = new Activity(richTextBox1.Text,
-                                      comboBoxGenericType.SelectedIndex,
-                                      comboBoxType.SelectedIndex,
-                                      0, // A changer !! Il faut le numéro de la location choisie
-                                      lastro,
-                                      false, // extern mission ?
-                                      false, //spaceVehicle ?
-                                      dateDeb,
-                                      dateFin);
-                    mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
-                    mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
-                    showDay(dateDeb.getDay());//On rafraichit le tableau journalier
-                    label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
-                    SaveActivityButton.Text = "Save Mods";
-                }
+            }
+            else
+            {
+                Activity a = new Activity(richTextBox1.Text,
+                                    comboBoxGenericType.SelectedIndex,
+                                    comboBoxType.SelectedIndex,
+                                    0, // A changer !! Il faut le numéro de la location choisie
+                                    lastro,
+                                    false, // extern mission ?
+                                    false, //spaceVehicle ?
+                                    dateDeb,
+                                    dateFin);
+                mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
+                mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                showDay(dateDeb.getDay());//On rafraichit le tableau journalier
+                label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+                SaveActivityButton.Text = "Save Mods";
             }
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)

@@ -328,7 +328,8 @@ namespace PineApple
         }
         public void updateActivity(int num, Activity a)
         {
-            _activities.Find(x => x.getNumber() == num).updateActivity(a);
+            int ind = _activities.FindIndex(x => x.getNumber() == num);
+            _activities[ind].updateActivity(a);
         }
     }
 }
