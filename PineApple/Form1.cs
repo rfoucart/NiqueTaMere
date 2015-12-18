@@ -392,7 +392,7 @@ namespace PineApple
         private void fillActivityPanel(Activity a)
         {
             //Remplissage des champs de l'activité
-            numericUpDown1.Value = mission.getSelectedDay();
+            numericUpDown1.Value = a.getDay();
             comboBoxStartHour.SelectedIndex = a.getStartDate().getHours();
             comboBoxStartMinutes.SelectedIndex = a.getStartDate().getMinutes() / 10;
             comboBoxEndHour.SelectedIndex = a.getEndDate().getHours();
