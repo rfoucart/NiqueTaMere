@@ -267,7 +267,7 @@ namespace PineApple
                 {
                     _astro.Add(int.Parse(a));
                 }
-                newActivity(activity["Description"].InnerText, int.Parse(activity["GenerycType"].InnerText), int.Parse(activity["Type"].InnerText), int.Parse(activity["Location"].InnerText), _astro, bool.Parse(activity["ExternMission"].InnerText), bool.Parse(activity["SpaceVehicle"].InnerText),bool.Parse(activity["Scaph"].InnerText) startDate, endDate);
+                newActivity(activity["Description"].InnerText, int.Parse(activity["GenerycType"].InnerText), int.Parse(activity["Type"].InnerText), int.Parse(activity["Location"].InnerText), _astro, bool.Parse(activity["ExternMission"].InnerText), bool.Parse(activity["SpaceVehicle"].InnerText),bool.Parse(activity["Scaph"].InnerText), startDate, endDate);
             }
 
             //Add the ref number to the class

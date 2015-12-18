@@ -27,6 +27,8 @@ namespace PineApple
 
             this.ReadMissionXML();
             mission.ReadActivityXML();
+            //mission.defaultDay(1);
+            //mission.WriteActivityXML();
 
             globalPanel.Controls.Remove(globalPanel.GetControlFromPosition(0, 0));
             daySheet = 4;//getDaySheetNumberFromDay(mission.getCurrentDay().getDay());
@@ -43,8 +45,8 @@ namespace PineApple
 
 
 
-            //mission.defaultDay(1);
-            //mission.WriteActivityXML();
+            
+
             showDay(mission.getCurrentDay().getDay());
             searchInit();
             updateDateNow();
@@ -699,7 +701,7 @@ namespace PineApple
 
         private void comboBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //if ((sender as ComboBox).SelectedIndex);
         }
         
     }   
