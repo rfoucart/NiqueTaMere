@@ -108,6 +108,7 @@ namespace PineApple
         public void deleteActivity(int number)
         {
             _activities.RemoveAll(x => x.getNumber() == number);
+            WriteActivityXML();
         }
         public void newLocation(string name, int posx, int posy)
         {
