@@ -326,5 +326,9 @@ namespace PineApple
                 return availability;
             }
         }
+        public void updateActivity(int num, Activity a)
+        {
+            _activities.Find(x => x.getNumber() == num).updateActivity(a);
+        }
     }
 }

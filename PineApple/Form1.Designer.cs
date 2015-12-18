@@ -32,6 +32,7 @@
             this.PreviousButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.comboBoxGenericType = new System.Windows.Forms.ComboBox();
             this.ResetActivityButton = new System.Windows.Forms.Button();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
@@ -96,7 +97,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.globalPanel = new PineApple.DoubleBufferedTableLayoutPanel();
             this.button3 = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictNanediVallis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -170,7 +170,17 @@
             this.groupBox1.Size = new System.Drawing.Size(696, 444);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Activity";
+            this.groupBox1.Text = "New Activity";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(318, 270);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(58, 34);
+            this.deleteButton.TabIndex = 60;
+            this.deleteButton.Text = "Delete Activity";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // comboBoxGenericType
             // 
@@ -237,7 +247,7 @@
             this.SaveActivityButton.Name = "SaveActivityButton";
             this.SaveActivityButton.Size = new System.Drawing.Size(59, 38);
             this.SaveActivityButton.TabIndex = 52;
-            this.SaveActivityButton.Text = "Save Mods";
+            this.SaveActivityButton.Text = "Save Activity";
             this.SaveActivityButton.UseVisualStyleBackColor = true;
             this.SaveActivityButton.Click += new System.EventHandler(this.SaveActivityButton_Click);
             // 
@@ -937,16 +947,6 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(318, 270);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(58, 34);
-            this.deleteButton.TabIndex = 60;
-            this.deleteButton.Text = "Delete Activity";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // Form1
             // 

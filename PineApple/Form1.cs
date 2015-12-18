@@ -17,6 +17,7 @@ namespace PineApple
         private Mission mission;
         private List<Button> listButtonPanel;
         private int daySheet;
+        private bool creating = true;
         public Form1()
         {
             InitializeComponent();
@@ -384,6 +385,7 @@ namespace PineApple
             //Appel de la fonction de remplissage
             fillActivityPanel(a);
             groupBox1.Text = "Activity";
+            SaveActivityButton.Text = "Save Mods";
         }
         //rempli les champs juste grace au numero de l'activité  tout les cas 
         private void fillActivityPanel(Activity a)
@@ -416,6 +418,7 @@ namespace PineApple
             for (int i = 0; i < checkedListBox1.Items.Count; i++)//On déselectionne tous les astronautes
                 checkedListBox1.SetItemChecked(i, false);
             ResetActivityButton.Tag = new Activity();
+            SaveActivityButton.Text = "Save Activity";
         }
 
         private void SaveActivityButton_Click(object sender, EventArgs e)
@@ -433,22 +436,42 @@ namespace PineApple
                 if (checkedListBox1.GetItemChecked(i))
                     lastro.Add(i);
             }
-            bool b = mission.checkAvailability(dateDeb, dateFin,lastro);
+            bool b = mission.checkAvailability(dateDeb, dateFin, lastro);
             if (b)
-            {      
-                //Puis on crée l'activité pour l'ajouter à la mission
-                mission.newActivity(richTextBox1.Text,
-                                    comboBoxGenericType.SelectedIndex,
-                                    comboBoxType.SelectedIndex,
-                                    0, // A changer !! Il faut le numéro de la location choisie
-                                    lastro,
-                                    false, // extern mission ?
-                                    false, //spaceVehicle ?
-                                    dateDeb,
-                                    dateFin);
-                mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
-                showDay(dateDeb.getDay());//On rafraichit le tableau journalier
-                label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+            {
+                if (creating) // Si on est en mode création
+                {//Puis on crée l'activité pour l'ajouter à la mission
+                    mission.newActivity(richTextBox1.Text,
+                                        comboBoxGenericType.SelectedIndex,
+                                        comboBoxType.SelectedIndex,
+                                        0, // A changer !! Il faut le numéro de la location choisie
+                                        lastro,
+                                        false, // extern mission ?
+                                        false, //spaceVehicle ?
+                                        dateDeb,
+                                        dateFin);
+                    mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                    showDay(dateDeb.getDay());//On rafraichit le tableau journalier
+                    label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+                    SaveActivityButton.Text = "Save Mods";
+                }
+                else
+                {
+                    Activity a = new Activity(richTextBox1.Text,
+                                      comboBoxGenericType.SelectedIndex,
+                                      comboBoxType.SelectedIndex,
+                                      0, // A changer !! Il faut le numéro de la location choisie
+                                      lastro,
+                                      false, // extern mission ?
+                                      false, //spaceVehicle ?
+                                      dateDeb,
+                                      dateFin);
+                    mission.updateActivity(((Activity)ResetActivityButton.Tag).getNumber(), a);
+                    mission.WriteActivityXML(); // On inscrit l'activité dans le .XML
+                    showDay(dateDeb.getDay());//On rafraichit le tableau journalier
+                    label32.Text = dateDeb.getDay().ToString();//On indique la journée affichée en haut du calendrier quotidien
+                    SaveActivityButton.Text = "Save Mods";
+                }
             }
         }
         private void ResetActivityButton_Click(object sender, EventArgs e)

@@ -166,6 +166,17 @@ namespace PineApple
 
             //___________________________________________________________
         }
-
+        public void updateActivity(Activity a)
+        {
+            _description = a._description;
+            _indexOfGenericType = a._indexOfGenericType;
+            _indexOfType = a._indexOfType;
+            _location = a._location;
+            _externMission = a._externMission;
+            _spaceVehicle = a._spaceVehicle;
+            _astronautes = a._astronautes;
+            _startDate = a._startDate;
+            _endDate = a._endDate;
+        }
     }
 }
