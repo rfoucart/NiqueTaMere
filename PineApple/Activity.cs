@@ -35,7 +35,7 @@ namespace PineApple
             _location = 0;
             _externMission = false;
             _spaceVehicle = false;
-            _astronautes = new List<int>(0);
+            _astronautes = null;
             MDate d = new MDate(1, 0, 0);
             _startDate = d;
             _endDate = d;
