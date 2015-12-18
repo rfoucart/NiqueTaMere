@@ -8,7 +8,7 @@ using System.IO;
 
 namespace PineApple
 {
-    class Mission
+    public class Mission
     {
         private List<Activity> _activities;
         private List<Day> _days;
@@ -435,6 +435,11 @@ namespace PineApple
                 Loca.Add(new loca());
             }
             return Loca;
+        }
+
+        public List<Activity> getActivities()
+        {
+            return _activities;
         }
     }
 }
