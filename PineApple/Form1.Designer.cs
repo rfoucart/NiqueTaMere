@@ -103,6 +103,8 @@
             this.tableLayoutPanel2 = new PineApple.DoubleBufferedTableLayoutPanel();
             this.tableLayoutPanel1 = new PineApple.DoubleBufferedTableLayoutPanel();
             this.searchPanel = new PineApple.DoubleBufferedTableLayoutPanel();
+            this.setDefaultDay = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -182,7 +184,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(219, 148);
+            this.checkBox5.Location = new System.Drawing.Point(246, 137);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(84, 17);
             this.checkBox5.TabIndex = 62;
@@ -193,7 +195,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(219, 125);
+            this.checkBox4.Location = new System.Drawing.Point(246, 114);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(101, 17);
             this.checkBox4.TabIndex = 61;
@@ -203,9 +205,9 @@
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(318, 270);
+            this.deleteButton.Location = new System.Drawing.Point(214, 410);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(58, 34);
+            this.deleteButton.Size = new System.Drawing.Size(196, 28);
             this.deleteButton.TabIndex = 60;
             this.deleteButton.Text = "Delete Activity";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -216,7 +218,7 @@
             this.comboBoxGenericType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxGenericType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxGenericType.FormattingEnabled = true;
-            this.comboBoxGenericType.Location = new System.Drawing.Point(216, 34);
+            this.comboBoxGenericType.Location = new System.Drawing.Point(243, 29);
             this.comboBoxGenericType.Name = "comboBoxGenericType";
             this.comboBoxGenericType.Size = new System.Drawing.Size(137, 21);
             this.comboBoxGenericType.TabIndex = 59;
@@ -224,11 +226,11 @@
             // 
             // ResetActivityButton
             // 
-            this.ResetActivityButton.Location = new System.Drawing.Point(318, 400);
+            this.ResetActivityButton.Location = new System.Drawing.Point(313, 276);
             this.ResetActivityButton.Name = "ResetActivityButton";
-            this.ResetActivityButton.Size = new System.Drawing.Size(59, 38);
+            this.ResetActivityButton.Size = new System.Drawing.Size(94, 59);
             this.ResetActivityButton.TabIndex = 58;
-            this.ResetActivityButton.Text = "Reset Mods";
+            this.ResetActivityButton.Text = "Reset Modifications";
             this.ResetActivityButton.UseVisualStyleBackColor = true;
             this.ResetActivityButton.Click += new System.EventHandler(this.ResetActivityButton_Click);
             // 
@@ -237,7 +239,7 @@
             this.comboBoxType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(216, 87);
+            this.comboBoxType.Location = new System.Drawing.Point(243, 82);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(137, 21);
             this.comboBoxType.TabIndex = 56;
@@ -246,7 +248,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(216, 18);
+            this.label15.Location = new System.Drawing.Point(243, 13);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 13);
             this.label15.TabIndex = 55;
@@ -255,7 +257,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(216, 71);
+            this.label14.Location = new System.Drawing.Point(243, 66);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 13);
             this.label14.TabIndex = 54;
@@ -263,9 +265,9 @@
             // 
             // NewActivityButton
             // 
-            this.NewActivityButton.Location = new System.Drawing.Point(318, 307);
+            this.NewActivityButton.Location = new System.Drawing.Point(12, 410);
             this.NewActivityButton.Name = "NewActivityButton";
-            this.NewActivityButton.Size = new System.Drawing.Size(58, 43);
+            this.NewActivityButton.Size = new System.Drawing.Size(196, 28);
             this.NewActivityButton.TabIndex = 53;
             this.NewActivityButton.Text = "New Activity";
             this.NewActivityButton.UseVisualStyleBackColor = true;
@@ -273,9 +275,9 @@
             // 
             // SaveActivityButton
             // 
-            this.SaveActivityButton.Location = new System.Drawing.Point(318, 356);
+            this.SaveActivityButton.Location = new System.Drawing.Point(313, 341);
             this.SaveActivityButton.Name = "SaveActivityButton";
-            this.SaveActivityButton.Size = new System.Drawing.Size(59, 38);
+            this.SaveActivityButton.Size = new System.Drawing.Size(94, 63);
             this.SaveActivityButton.TabIndex = 52;
             this.SaveActivityButton.Text = "Save Activity";
             this.SaveActivityButton.UseVisualStyleBackColor = true;
@@ -283,7 +285,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 307);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 276);
             this.richTextBox1.MaxLength = 400;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(300, 131);
@@ -293,7 +295,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 291);
+            this.label6.Location = new System.Drawing.Point(12, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(168, 13);
             this.label6.TabIndex = 48;
@@ -302,7 +304,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(117, 87);
+            this.label13.Location = new System.Drawing.Point(119, 68);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(10, 13);
             this.label13.TabIndex = 47;
@@ -318,7 +320,7 @@
             "30",
             "40",
             "50"});
-            this.comboBoxStartMinutes.Location = new System.Drawing.Point(128, 84);
+            this.comboBoxStartMinutes.Location = new System.Drawing.Point(130, 65);
             this.comboBoxStartMinutes.Name = "comboBoxStartMinutes";
             this.comboBoxStartMinutes.Size = new System.Drawing.Size(41, 21);
             this.comboBoxStartMinutes.TabIndex = 46;
@@ -352,7 +354,7 @@
             "22",
             "23",
             "24"});
-            this.comboBoxStartHour.Location = new System.Drawing.Point(72, 84);
+            this.comboBoxStartHour.Location = new System.Drawing.Point(74, 65);
             this.comboBoxStartHour.Name = "comboBoxStartHour";
             this.comboBoxStartHour.Size = new System.Drawing.Size(44, 21);
             this.comboBoxStartHour.TabIndex = 45;
@@ -360,7 +362,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(117, 132);
+            this.label8.Location = new System.Drawing.Point(119, 113);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 44;
@@ -376,7 +378,7 @@
             "30",
             "40",
             "50"});
-            this.comboBoxEndMinutes.Location = new System.Drawing.Point(128, 129);
+            this.comboBoxEndMinutes.Location = new System.Drawing.Point(130, 110);
             this.comboBoxEndMinutes.Name = "comboBoxEndMinutes";
             this.comboBoxEndMinutes.Size = new System.Drawing.Size(41, 21);
             this.comboBoxEndMinutes.TabIndex = 43;
@@ -410,14 +412,14 @@
             "22",
             "23",
             "24"});
-            this.comboBoxEndHour.Location = new System.Drawing.Point(72, 129);
+            this.comboBoxEndHour.Location = new System.Drawing.Point(74, 110);
             this.comboBoxEndHour.Name = "comboBoxEndHour";
             this.comboBoxEndHour.Size = new System.Drawing.Size(44, 21);
             this.comboBoxEndHour.TabIndex = 42;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(72, 40);
+            this.numericUpDown1.Location = new System.Drawing.Point(74, 21);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             500,
             0,
@@ -440,28 +442,28 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 185);
+            this.checkedListBox1.Location = new System.Drawing.Point(14, 157);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox1.TabIndex = 40;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(216, 197);
+            this.textBox3.Location = new System.Drawing.Point(243, 189);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 20);
             this.textBox3.TabIndex = 39;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 241);
+            this.textBox2.Location = new System.Drawing.Point(243, 233);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(45, 20);
             this.textBox2.TabIndex = 38;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(216, 219);
+            this.textBox1.Location = new System.Drawing.Point(243, 211);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(45, 20);
             this.textBox1.TabIndex = 37;
@@ -469,7 +471,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(191, 245);
+            this.label12.Location = new System.Drawing.Point(218, 237);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 13);
             this.label12.TabIndex = 36;
@@ -478,7 +480,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(191, 223);
+            this.label11.Location = new System.Drawing.Point(218, 215);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(23, 13);
             this.label11.TabIndex = 35;
@@ -487,7 +489,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(263, 245);
+            this.label10.Location = new System.Drawing.Point(290, 237);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 34;
@@ -496,7 +498,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(263, 223);
+            this.label9.Location = new System.Drawing.Point(290, 215);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 33;
@@ -505,7 +507,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(179, 201);
+            this.label7.Location = new System.Drawing.Point(206, 193);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 32;
@@ -514,7 +516,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 169);
+            this.label5.Location = new System.Drawing.Point(11, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 13);
             this.label5.TabIndex = 31;
@@ -523,7 +525,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 132);
+            this.label4.Location = new System.Drawing.Point(14, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 30;
@@ -532,7 +534,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 87);
+            this.label3.Location = new System.Drawing.Point(11, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 29;
@@ -541,7 +543,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 42);
+            this.label2.Location = new System.Drawing.Point(36, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 28;
@@ -551,7 +553,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(187, 171);
+            this.label1.Location = new System.Drawing.Point(215, 165);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 27;
@@ -1013,7 +1015,7 @@
             this.searchPanel.ColumnCount = 3;
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 164F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
-            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 229F));
+            this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 169F));
             this.searchPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
@@ -1025,11 +1027,35 @@
             this.searchPanel.Size = new System.Drawing.Size(537, 231);
             this.searchPanel.TabIndex = 12;
             // 
+            // setDefaultDay
+            // 
+            this.setDefaultDay.Location = new System.Drawing.Point(1134, 8);
+            this.setDefaultDay.Name = "setDefaultDay";
+            this.setDefaultDay.Size = new System.Drawing.Size(119, 23);
+            this.setDefaultDay.TabIndex = 71;
+            this.setDefaultDay.Text = "Fill with Default Day";
+            this.setDefaultDay.UseVisualStyleBackColor = true;
+            this.setDefaultDay.Click += new System.EventHandler(this.setDefaultDay_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Enabled = false;
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(1013, 5);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(115, 26);
+            this.label33.TabIndex = 72;
+            this.label33.Text = "Error : This day already\r\nhave activities.";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 738);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.setDefaultDay);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.label31);
@@ -1147,6 +1173,8 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Button setDefaultDay;
+        private System.Windows.Forms.Label label33;
     }
 }
 

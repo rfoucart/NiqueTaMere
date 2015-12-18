@@ -918,6 +918,16 @@ namespace PineApple
  
         }
 
+        private void setDefaultDay_Click(object sender, EventArgs e)
+        {
+            List<Activity> lact = mission.selectActivitiesByDay(mission.getSelectedDay());
+            if (lact.Count == 0)
+                mission.defaultDay(mission.getSelectedDay());
+            else
+                label33.Enabled = true;
+
+        }
+
         
         
         
