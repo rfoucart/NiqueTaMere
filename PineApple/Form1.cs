@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,37 +23,53 @@ namespace PineApple
         public Form1()
         {
             InitializeComponent();
+
             listButtonPanel = new List<Button>(0);
             //mission = new Mission("wasabi",numberOfDays);
+            if (!File.Exists("./mission.xml"))
+            {
+                this.Hide();
+                StartPage startPage = new StartPage();
+                startPage.ShowDialog();
+                string name = startPage.name;
+                DateTime start = startPage.start;
 
-            this.ReadMissionXML();
-            mission.ReadActivityXML();
-            //mission.defaultDay(1);
-            //mission.WriteActivityXML();
+                mission = new Mission(name, 500);
 
+                mission.newAstronaute("jean-pierre");
+                mission.newAstronaute("jean-guy");
+                mission.newAstronaute("pierre-jean");
+
+                mission.defaultDay(1);
+                mission.newLocation("Base", 700, 1000);
+                WriteMissionXML();
+
+                mission.WriteActivityXML();//WriteXml
+
+                
+            }
+            else
+            {
+
+
+                this.ReadMissionXML();
+                mission.ReadActivityXML();
+
+
+            }
             globalPanel.Controls.Remove(globalPanel.GetControlFromPosition(0, 0));
             daySheet = 4;//getDaySheetNumberFromDay(mission.getCurrentDay().getDay());
             globalPanelInit();
             panelActu(daySheet);
-
-            //mission.newAstronaute("jean-pierre");
-            //mission.newAstronaute("jean-guy");
-            //mission.newAstronaute("pierre-jean");
-
-            //mission.newLocation("petaouchnok",150,200);
-            //mission.newLocation("Base", 700, 1000);
-            //this.WriteMissionXML();
-
-
-
-            
-
             showDay(mission.getCurrentDay().getDay());
             searchInit();
+                
             updateDateNow();
+
             updateSelectedTime(mission.getCurrentDay().getDay());
 
             dayHeaderInit();
+
         }
         //Initialisation/remplissage du groupbox de recherche
         private void searchInit()
@@ -925,6 +942,8 @@ namespace PineApple
                 mission.defaultDay(mission.getSelectedDay());
             else
                 label33.Enabled = true;
+
+            showDay(mission.getSelectedDay());
 
         }
 

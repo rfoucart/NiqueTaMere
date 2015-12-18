@@ -27,7 +27,7 @@ namespace PineApple
         /// </summary>
         public Mission(string name, int numberOfDays)
         {
-            _firstDayEarth = new DateTime(2015, 12, 13,0,0,0);
+            _firstDayEarth = new DateTime(2015, 12, 13, 0, 0, 0);
             _currentDayEarth = DateTime.Now;
             _numberOfDays = numberOfDays;
             _activities = new List<Activity>(0);
